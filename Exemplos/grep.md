@@ -1,4 +1,4 @@
-##Funcionalidades Grep
+## Funcionalidades Grep
 
 * *Global Regular Expression Print*
 * Pesquisa ocorrências de cadeia de caracteres na entrada definida
@@ -7,7 +7,7 @@
    * `grep`  -> normal, não permite **REGEX**
    * `egrep` -> REGEX extendido, permite **REGEX**, atalho `grep -E`
 
-**Uso da opção `grep -E` , quando houver: **
+**Uso da opção `grep -E` , quando houver:**
 
 ```
 Ponto de interrogação	?
