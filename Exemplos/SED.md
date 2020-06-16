@@ -1,18 +1,19 @@
-SED
+# SED
 
-* As opções abaixo podem ser usadas de maneira mista, utilizando ponto e vírgula
+*As opções abaixo podem ser usadas de maneira mista, utilizando ponto e vírgula*
 
-** Comandos que atuam na linha inteira: **
+**Comandos que atuam na linha inteira:**
 
+```
 sed '1 i 4' <<< 5 # Na linha 1, insira um 4
 sed '1 a 6' <<< 5 # Após linha 1, insira um 6
 sed '1 c outro 5' <<< 5 # Substitua 5, por "outro 5"
-p - imprime / d - deleta / !p/!d nao imprime/nao deleta
+p   # imprim e / d - deleta / !p/!d nao imprime/nao deleta
 -p  # Imprima tudo, incluindo oque foi explicitado (2x)
 -!p # Imprima tudo 2x, Menos oque foi explicitado
--d	# Delete apenas oque foi explicitado
+-d  # Delete apenas oque foi explicitado
 -!d # Delete tudo, menos oque foi explicitado
-
+```
 ----------------------------------------------------------------------
 Printando linhas (p)
 
