@@ -36,7 +36,7 @@ Opção -f	Indica o arquivo que contém as Expressões Regulares que serão pesq
 
 **Complementares**
 
-```
+
 ## Pegar linha especifica do arquivo somente com grep
 grep -E '^3\b' <<< $(grep -n '.*' /etc/passwd)
 3:bin:x:2:2:bin:/bin:/usr/sbin/nologin
