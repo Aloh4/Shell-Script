@@ -3,7 +3,8 @@
 * Método formal para se especificar um padrão de texto.
 * É composta por metacaracteres ** ? + * ^ $ \b [] {} () | . **
 
-## OBS Tabelas de consulta em anexo !
+## Tabelas Aurélio Jargas !
+https://www.dropbox.com/s/ntbw8a278fucgm2/expressoes-regulares-3-tabelas.pdf?dl=0
 
 ### Testes interativos:
 https://www.piazinho.com.br/ed5/exemplos.html#3
