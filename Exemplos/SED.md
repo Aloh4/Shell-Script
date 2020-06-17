@@ -22,7 +22,6 @@ p   # imprim e / d - deleta / !p/!d nao imprime/nao deleta
 ```
 ,		# Vírgula delimita linhas
 / /		# Barras casam valores
-
 ```
 -----
 * Imprimir linhas escolhidas (p)
