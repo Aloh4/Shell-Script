@@ -27,10 +27,9 @@ p   # imprim e / d - deleta / !p/!d nao imprime/nao deleta
 -----
 * Imprimir linhas escolhidas (p)
 
-```
-seq 2 2 14 # Sequência a partir de 2, saltando de 2 em 2 até 14
+      seq 2 2 14 # Sequência a partir de 2, saltando de 2 em 2 até 14
 
-seq 5 | sed -n '3p'			# Imprimi a linha 3 
+      seq 5 | sed -n '3p'			# Imprimi a linha 3 
 
 seq 2 2 14 | sed '3,5p'    		# Imprimir da 3ª a 5ª linha, será exibido o arquivo todo e as linhas 3 a 5 editadas a mais
 2 4 6 6 8 8 10 10 12 14
@@ -66,7 +65,7 @@ sync:x:4:65534:sync:/bin:/bin/sync
 root@whoami:~# cat /etc/passwd | sed -n '1p'
 root:x:0:0:root:/root:/bin/bash
 
-```
+
 ------------
 # Deletando linhas (d)
 
