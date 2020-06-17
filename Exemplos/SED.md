@@ -235,7 +235,7 @@ abrXcXdXbrX
 ```
 
 -----------
-#Dicas sobre Delimitadores
+# Dicas sobre Delimitadores
 
 * A barra ` \ ` não são obrigatórias como delimitadores
 * O `sed` entenderá como delimitador, qualquer caractere após o `s`
