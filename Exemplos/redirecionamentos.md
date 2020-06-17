@@ -203,8 +203,8 @@ world hello
 
 O mesmo não acontece utilizando Here Strings
 Pois a string "Hello World" é enviada diretamente para a entrada do comando read.
-
-
+```
+-----
 **Exemplos:**
 
 ```
@@ -213,14 +213,12 @@ root@whoami:~# grep -Eo 'sites|whoami' <<< $(ls;who)
 sites
 whoami
 
--> Comum
-root@whoami:~# echo "scale=3; 22/7" | bc
-3.142
--> Com Here strings
-root@whoami:~# bc <<< "scale=3; 22/7"
+Comum
+echo "scale=3; 22/7" | bc
 3.142
 
-```
-
+Com Here strings
+bc <<< "scale=3; 22/7"
+3.142
 
 ```
