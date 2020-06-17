@@ -1,6 +1,6 @@
-#Resumo
+# Resumo
 
-** Linux é um sistema multiusuário **
+**Linux é um sistema multiusuário**
 
 * **Shell** = Primeiro programa *ganhado* no linux.
 
@@ -26,14 +26,13 @@ user:validate-pass:user-identifier-UID:group-identifier-GUID:comments:path-direc
 
 * É possível definir *shutdown* em starter-program, e toda vez que o user **X** logar-se, a máquina seria desligada.
 
----
-#Teoria
+-------
+# Teoria
 
-** Camadas do Linux **
+**Camadas do Linux**
 
 ```
 Hardware -> Kernel -> Programas e Comandos -> Shell
-
 ```
 
 * O **shell** avalia as linhas digitadas em pedaços, separados por espaços/brancos
@@ -148,5 +147,5 @@ Exemplo [! ]/[^ ] = [!A-Za-z0-9] <- Casa tudo !, menos o conteúdo da lista (per
 
 *Finalmente* 
 
-**5 - Verifica se o comando existe e se está com a execução permitida;**
+**5 - Verifica se o comando existe e se está com a execução permitida;** <br>
 **6 - Finalmente manda a linha interpretada para a execução.**
