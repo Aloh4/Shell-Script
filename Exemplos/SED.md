@@ -14,33 +14,38 @@ p   # imprim e / d - deleta / !p/!d nao imprime/nao deleta
 -d  # Delete apenas oque foi explicitado
 -!d # Delete tudo, menos oque foi explicitado
 ```
-----------------------------------------------------------------------
-Printando linhas (p)
+---------
+# Printando linhas (p)
 
-Obs:
+**Obs:**
 
+```
 ,		# Vírgula delimita linhas
 / /		# Barras casam valores
 
+```
+-----
 * Imprimir linhas escolhidas (p)
-seq 2 2 14    		   	   			# Sequência a partir de 2, saltando de 2 em 2 até 14
 
-seq 5 | sed -n '3p'					# Imprimi a linha 3 
+```
+seq 2 2 14 # Sequência a partir de 2, saltando de 2 em 2 até 14
 
-seq 2 2 14 | sed '3,5p'    			# Imprimir da 3ª a 5ª linha, será exibido o arquivo todo e as linhas 3 a 5 editadas a mais
+seq 5 | sed -n '3p'			# Imprimi a linha 3 
+
+seq 2 2 14 | sed '3,5p'    		# Imprimir da 3ª a 5ª linha, será exibido o arquivo todo e as linhas 3 a 5 editadas a mais
 2 4 6 6 8 8 10 10 12 14
 
-seq 2 2 14 | sed -n '3,5p' 			# Com a opção -n 'quiet', será exibido apenas oque for ordenado
+seq 2 2 14 | sed -n '3,5p' 		# Com a opção -n 'quiet', será exibido apenas oque for ordenado
 6 8 10
 
 seq 2 2 14 | sed -n '/2/,/4/p' 		# Lista as linhas que tem nº 2 e 4 (cadeias de caracteres)
-2 4 12 14					   		# obs: Irá listar todas as entradas com 2 e 4
-seq 2 2 14 | sed -n '/^2$/,/^4$/'   # Para tal, usa-se regex ^ e $ para delimitar limites
+2 4 12 14				# obs: Irá listar todas as entradas com 2 e 4
+seq 2 2 14 | sed -n '/^2$/,/^4$/'   	# Para tal, usa-se regex ^ e $ para delimitar limites
    
-seq 5 | sed '1d;5d'					# Exemplo com ponto e vírgula
+seq 5 | sed '1d;5d'			# Exemplo com ponto e vírgula
 2 3 4
 
-seq 5 | sed '1,2d;4,5d'				# Exemplo com ponto e vírgula
+seq 5 | sed '1,2d;4,5d'			# Exemplo com ponto e vírgula
 3
 
 seq 5 | sed -n '/1/,/2/p;/3/,/4/p;'	# Exemplo com ponto e vírgula
@@ -61,13 +66,13 @@ sync:x:4:65534:sync:/bin:/bin/sync
 root@whoami:~# cat /etc/passwd | sed -n '1p'
 root:x:0:0:root:/root:/bin/bash
 
-----------------------------------------------------------------------
-Deletando linhas (d)
+```
+------------
+# Deletando linhas (d)
 
 * Mesmo uso do comando anterior(p), porém utilizando 'd'
 
-----------------------------
-Importante !
+**Importante !**
 
 * Para um efeito 'reverso', pode-se usar (!) a negação do delete.
 * Melhor do que a opção -n !!
@@ -76,7 +81,7 @@ seq 2 2 14 | sed '/2/,/4/!d'
 2 4 12 14
 
 ## Ou ainda o reverso do d, utilizando -n e !p
-seq 2 2 14 | sed -n '/2/,/4/!p'
+    seq 2 2 14 | sed -n '/2/,/4/!p'
 
 ----------------------------
 * Deleta apenas a 3º linha:
