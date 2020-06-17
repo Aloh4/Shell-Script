@@ -1,7 +1,7 @@
 # Priorização de processos/execução
 
 * Usado para priorizar uma expressão (comando)
-* Para tal, pode-ser usar
+* Para tal, pode-se usar
    * **Crase** ` `` `
    * **Construções** ` $(cmd1..cmd2..etc)`  **recomendado**
 
