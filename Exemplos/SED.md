@@ -123,6 +123,7 @@ c		change 		(troca)			Troca linha(s) estipulada(s)
 ```
 
 **Exemplos**
+
 ```
 ## Obs para esssa opção, deve ser usado o argumento -e, ponto e virgula não funcionaria
 Exemplo correto:
@@ -211,10 +212,11 @@ sed 's/ / /I' -> Ignore case-sensitive
 sed 's/unix/Linux/I' <<< "Gosto de Unix"
 -> Gosto de Linux
 
-```	
+```
 	
 **Exemplos:**
 
+```
 ## Alterar somente a primeira ocorrência
 sed 's/a/X/' <<< abracadabra
 Xbracadabra
@@ -230,8 +232,9 @@ XbrXcXdXbrX
 ## Trocar todas as linhas, a partir da segunda
 sed 's/a/X/2g' <<< abracadabra
 abrXcXdXbrX
+```
 
-----------------------------------------------------------------------
+-----------
 #Dicas sobre Delimitadores
 
 * A barra ` \ ` não são obrigatórias como delimitadores
@@ -289,9 +292,9 @@ sed '/^\//!d' arqs
 
 ```
 
-----------------------------------------------------------------------
-Opção -i (edit files 'in place')
-OBS: Edita o arquivo original !
+------------
+# Opção -i (edit files 'in place')
+**OBS: Edita o arquivo original !**
 
 ```
 #Lê o arquivo arq e manda a saída para arq2
@@ -308,7 +311,7 @@ cat arq.bkp -> ABCDE (cópia antes da edição)
 sed -i 's/A/#/' arq
 ```
 
-* Exemplo para deletar entradas de arquivo, usando outro arquivo:
+**Exemplo para deletar entradas de arquivo, usando outro arquivo:**
 
 ```
 cat stringsed
@@ -348,11 +351,13 @@ BBB
 CCC
 ```
 
-----------------------------------------------------------------------
-Opção -f (file--script)
+-------
+# Opção -f (file--script)
 
-# Utiliza um arquivo pré-existente para realizar sua operação.
+**Utiliza um arquivo pré-existente para realizar sua operação.** 
 
+**Exemplos** 
+```
 #Criar um arquivo com entradas a serem deletadas:
 cat exclui:
 postflix .. gdm.. root
@@ -383,23 +388,27 @@ s/A/#/
 
 sed -f exclui2 <<< ABCDE
 #BCDE
+```
+--------
+# Opção -s
 
-----------------------------------------------------------------------
-Opção -s
+* **Edita vários arquivos de uma vez**
 
-#Edita vários arquivos de uma vez
-
+**Exemplos**
+```
 #Deleta a terceira da linha dos arquivos:
 sed -s '3d' arq1 arq2 arq3
 
 #Print a terceira da linha dos arquivos:
 sed -s '3!d' arq1 arq2 arq3
+```
+------------
+# Opção (e)
 
-----------------------------------------------------------------------
-Opção (e)
+* **Editar entradas distintas no mesmo arquivo (igual o uso de `;`)**
 
-#Editar entradas distintas no mesmo arquivo (igual o uso de `;`)
-
+**Exemplos**
+```
 # Com a opção -e
 seq 3 | sed -e '1 i\0' -e '$ a\4'
 0 1 2 3 4
@@ -410,18 +419,18 @@ seq 3 | sed '1i\0' | sed '4a\4' // Inseriu 0 no início, 3 virou a 'quarta linha
 
 # Com Regex
 seq 3 | sed '1 i\0' | sed '$ a\4'
-
-----------------------------------------------------------------------
+```
+--------------
 Substituir caracteres (y)
 
-#Semelhate a opção `s`
+* Semelhate a opção `s`
 
-# `s` Pesquisa por cadeias = **REGEX**
-# `y` Pesquisa caractere e o substitui  
+* `s` Pesquisa por cadeias = **REGEX**
+* `y` Pesquisa caractere e o substitui  
 
-# Troca um a um dos caracteres da ENTRADA pela SAÍDA
-# A quantidade de caracteres deve ser igual !
-# Sintaxe: `sed 'y/ENTRADA/SAIDA' `
+* Troca um a um dos caracteres da ENTRADA pela SAÍDA
+* A quantidade de caracteres deve ser igual !
+* Sintaxe: `sed 'y/ENTRADA/SAIDA' `
 
 sed 'y/aeiou/12345/' <<< inconstitucionalissimamente
 3nc4nst3t5c34n1l3ss3m1m2nt2
@@ -442,5 +451,3 @@ sed 'y/ABCEGIJOPQSTXZ/48(361|0?957*2/' <<< BLACKHORSE
 8L4(KH0R53
 
 ```
-
-----------------------------------------------------------------------
