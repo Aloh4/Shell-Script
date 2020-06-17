@@ -23,8 +23,8 @@ p   # imprim e / d - deleta / !p/!d nao imprime/nao deleta
 ,		# Vírgula delimita linhas
 / /		# Barras casam valores
 ```
------
-* Imprimir linhas escolhidas (p)
+
+**Exemplos**
 ```
 seq 2 2 14 				# Sequência a partir de 2, saltando de 2 em 2 até 14
 
@@ -176,12 +176,11 @@ seq 5 | sed '3c\
 seq 5 | sed '$a\6'
 1 2 3 4 5 6 
 ```
-----------------------------------------------------------------------
-Substituir cadeias (s)
+-----
+# Substituir cadeias (s)
 
 * Troca as ocorrências(cadeias de caracteres) de uma *REGEX* por um novo valor especificado
 * Atua em todas as linhas do texto
-	
 * `sed 's/REGEX/ALTERAÇÃO/' ARQ`
 * `sed -r 's/REGEX/ALTERAÇÃO/' ARQ` - *Extended Regex*
 
@@ -192,7 +191,7 @@ sed 's/REGEX/Texto/3' <- substitui na terceira ocorrencia
 * Caso usar a ocorrencia + a opçao global (g), será substituido a partir da ocorrencia X
 sed 's/REGEX/Texto/3g' <- substitui da terceira ocorrencia pra frente !
 	
-**Exemplo Sintaxe**
+**Exemplo de Sintaxe**
 
 ```
 # sed 's/So/Ana/' <<< Solista
