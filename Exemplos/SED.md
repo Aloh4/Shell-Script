@@ -421,7 +421,7 @@ seq 3 | sed '1i\0' | sed '4a\4' // Inseriu 0 no início, 3 virou a 'quarta linha
 seq 3 | sed '1 i\0' | sed '$ a\4'
 ```
 --------------
-Substituir caracteres (y)
+# Substituir caracteres (y)
 
 * Semelhate a opção `s`
 
