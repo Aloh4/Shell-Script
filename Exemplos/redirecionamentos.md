@@ -53,7 +53,7 @@ script.sh 2>> log.err 1>> log.txt // Envia a saída de erros para log.err, e a s
 
 * O modo correto é `> arq` 
 	
-**Logo**
+**Logo:**
 	
    * Criar arquivo `> arq`
    * Inserir dados:
@@ -204,7 +204,7 @@ world hello
 O mesmo não acontece utilizando Here Strings
 Pois a string "Hello World" é enviada diretamente para a entrada do comando read.
 ```
------
+
 **Exemplos:**
 
 ```
