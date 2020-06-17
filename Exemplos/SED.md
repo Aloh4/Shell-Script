@@ -26,10 +26,10 @@ p   # imprim e / d - deleta / !p/!d nao imprime/nao deleta
 ```
 -----
 * Imprimir linhas escolhidas (p)
+```
+seq 2 2 14 				# Sequência a partir de 2, saltando de 2 em 2 até 14
 
-      seq 2 2 14 # Sequência a partir de 2, saltando de 2 em 2 até 14
-
-      seq 5 | sed -n '3p'			# Imprimi a linha 3 
+seq 5 | sed -n '3p'			# Imprimi a linha 3 
 
 seq 2 2 14 | sed '3,5p'    		# Imprimir da 3ª a 5ª linha, será exibido o arquivo todo e as linhas 3 a 5 editadas a mais
 2 4 6 6 8 8 10 10 12 14
@@ -64,7 +64,7 @@ sync:x:4:65534:sync:/bin:/bin/sync
 * Linha especifica do arquivo:
 root@whoami:~# cat /etc/passwd | sed -n '1p'
 root:x:0:0:root:/root:/bin/bash
-
+```
 
 ------------
 # Deletando linhas (d)
@@ -82,7 +82,8 @@ seq 2 2 14 | sed '/2/,/4/!d'
 ## Ou ainda o reverso do d, utilizando -n e !p
     seq 2 2 14 | sed -n '/2/,/4/!p'
 
-----------------------------
+**Exemplos:**
+```
 * Deleta apenas a 3º linha:
 seq 5 | sed '3d' 
 
@@ -106,27 +107,30 @@ seq 5 | sed '1d;5d'
 ## Exemplo com ponto e vírgula
 seq 5 | sed '/1/,/2/d;/3/,/4/d;'
 5
-
-----------------------------------------------------------------------
-#Inserindo/Trocando linhas (a , i , c)
+```
+------------------
+# Inserindo/Trocando linhas (a , i , c)
 
 
 * O uso da contrabarra é dependente do sistema a ser utilizado !
 * Pode-ser usar um espaço 
 * O Contrabarra permite inserção de espaços
 
-Comando	Significado	Definição
+```
+Comando	Significado		Definição
 a		append 		(acrescentar)		Anexa linha(s) após o local estipulado
 i		insert 		(insere)		Insere linha(s) antes do local estipulado
 c		change 		(troca)			Troca linha(s) estipulada(s)
+```
 
-
+**Exemplos**
+```
 ## Obs para esssa opção, deve ser usado o argumento -e, ponto e virgula não funcionaria
 Exemplo correto:
 seq 5 | sed -e '/1/,/2/c\#' -e '/3/,/4/c\##'
 # ## 5
 Exemplo errado:
-root@whoami:~# seq 5 | sed '1,3a\##; 4i\!!'
+seq 5 | sed '1,3a\##; 4i\!!'
 1 ##; 4i!! 2
 Intervalo Misto OK
 seq 5 | sed -e '/1/,/2/d;/3/,/4/a\%%%'
@@ -148,7 +152,6 @@ seq 5 | sed '3i\AAA'
 seq 5 | sed '3c\AAA'
 1 2 AAA 4 5
 
-
 * Editando múltiplas linhas:
 seq 5 | sed '2,4a\###'
 1 2 ### 3 ### 4 ### 5
@@ -165,7 +168,7 @@ seq 5 | sed '2,4c\###'
 seq 5 | sed '3c\###\n###'
 1 2 ### ### 4 5
 
-root@whoami:~# seq 5 | sed '3c\
+seq 5 | sed '3c\
 > ###\
 > ###'
 1 2 ### ### 4 5
@@ -173,6 +176,7 @@ root@whoami:~# seq 5 | sed '3c\
 * Inserir linha no final do arquivo:
 seq 5 | sed '$a\6'
 1 2 3 4 5 6 
+```
 ----------------------------------------------------------------------
 Substituir cadeias (s)
 
