@@ -24,6 +24,7 @@ Opção -E	Extended regex
 Opção -l	Só mostra o nome dos arquivos nos quais houve casamento
 Opção -c	Somente a quantidade de linhas que casarem com uma expressão regular.
 Opção -n	Precede cada linha com seu número relativo dentro de arquivo.
+Opção -q  quiet, não exibe nada na saída padrão
 
 Opção -v	Lista tudo, menos as linhas nas quais houve casamento
 Opção -i	A pesquisa ignora caixa alta e caixa baixa
