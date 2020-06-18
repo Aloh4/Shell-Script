@@ -29,7 +29,6 @@ Usando aspas, ex:
 echo $var   -> Saída não formatada
 echo "$var" -> Saída formatada
 ```
-```
 
 **Priorização de comando, $var recebe como valor a saída do comando ls -l e não a string, ls -l**
 
