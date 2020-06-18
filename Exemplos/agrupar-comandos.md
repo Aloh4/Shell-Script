@@ -32,10 +32,10 @@ root@whoami:~# (pwd; cd work/; pwd)
 Obs: O subshell executou os comandos, o processo morreu e retornou para o shell que estava em execução !
 
 ## Exemplo: 
-root@whoami:~# var="Valor inicial"                        // var = Valor inicial
-root@whoami:~# (var="Pseudo Valor"; echo $var); echo $var	// Criando/Executando um subshell para substituir o valor de $var.
-Pseudo Valor												                      // O Subshel executa o conteúdo do parênteses com o valor de $var alterado.
-Valor inicial												                      // O Shell executa echo $var original
+root@whoami:~# var="Valor inicial"  // var = Valor inicial
+root@whoami:~# (var="Pseudo Valor"; echo $var); echo $var // Criando/Executando um subshell para substituir o valor de $var.
+Pseudo Valor    // O Subshel executa o conteúdo do parênteses com o valor de $var alterado.
+Valor inicial   // O Shell executa echo $var original
 
 root@whoami:~# var=1;echo $var:1;(var=5; echo $var:5); echo $var:2
 1:1
