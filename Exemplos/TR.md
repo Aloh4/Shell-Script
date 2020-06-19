@@ -27,6 +27,19 @@ Seqüência  	  Significado  	  		Octal
 \r	  		  Início da linha <^M>  \015
 \\	  		  Uma barra invertida  	\0134
 ```
+
+**Pode-se usar intervalos ou valores especificos**
+```
+## Pode-se usar intervalos ou valores especificos
+$ cat > aloha
+AAA
+BBB
+
+$ cat aloha | tr -s "A-B"
+A ... B
+$ cat aloha | tr -s "A,B"
+A ... B
+```
 -----
 ## Trocando caracteres:
 
@@ -115,19 +128,6 @@ cat date-atual date-passado | tr -s " " | cut -f4 -d " "
 **Remover tabs**
 ```
 $cat olts | tr -s "\t"
-```
-**OBS**
-**Pode-se usar intervalos ou valores especificos**
-```
-## Pode-se usar intervalos ou valores especificos
-$ cat > aloha
-AAA
-BBB
-
-$ cat aloha | tr -s "A-B"
-A ... B
-$ cat aloha | tr -s "A,B"
-A ... B
 ```
 
 -----
