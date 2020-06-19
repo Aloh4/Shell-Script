@@ -48,7 +48,18 @@ script.sh 2>> log.err 1>> log.txt // Envia a saída de erros para log.err, e a s
    * O shell resolverá a linha digitada;
    * Vendo o redirecionamento, criará um novo arquivo
    * E finalmente, mandará a linha para a execução.
-	   
+
+**Obs: CAT / TOUCH não criam arquivos !**
+
+* O modo correto é `> arq` 
+	
+**Logo...**
+```	
+   * Criar arquivo `> arq`
+   * Inserir dados:
+     * `cat >> arq`
+     * `echo "string" >> arq`
+```
 -----
 # Saída de erros
 
