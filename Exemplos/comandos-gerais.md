@@ -13,7 +13,7 @@ $ > temp
 
 **Obs: CAT / TOUCH não criam arquivos !**
 
-* O modo correto é `> arq
+* O modo correto é > arq
 
 ```
 
@@ -26,10 +26,14 @@ mkdir /usr/local/{bin,etc,games,include,lib,sbin,share,src}
 ## Copie o arq1 para o arq.bkp:
 ```
 root@whoami:~/shell/sequencias# cp arq{1,.bkp}
-```
 
 ## Exemplo saída:
-```
 root@whoami:~/shell/sequencias# echo arq{1,.bkp}
 arq1 arq.bkp 
+```
+## Exemplos tail:
+```
+$ seq 10 | tail -5    # Lista as 5 últimas
+$ seq 10 | tail -n 4    # Lista as 4 últimas
+$ seq 10 | tail -n +3    # Lista as últimas a partir da 3ª
 ```
