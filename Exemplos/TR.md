@@ -130,8 +130,6 @@ $ cat aloha | tr -s "A,B"
 A ... B
 ```
 
-** Obs: Pode-se usar escape sequences para, como no exemplo "Remover OLTS"
-
 -----
 ## Deletando caracteres 
 
@@ -139,7 +137,7 @@ A ... B
 
 **Removendo carriage-return em arquivos windows**
 
-`
+```
 $ cat -ve ArqDoDOS.txt
 Este arquivo^M$$
 foi gerado pelo^M$$
@@ -149,14 +147,14 @@ ftp mal feito.^M$$
 
 $ tr -d '\r' < ArqDoDOS.txt > /tmp/$$
 $ mv -f /tmp/$$ ArqDoDOS.txt
-`
+```
 
 **Procurar usuarios logados a mais de um dia**
-`
+```
 data=$(date | cut -c5-10)
 data=$(who | tr -s " " | cut -f3 -d" ")
 ##ou...
 who | grep -v "$data"
 ##Exemplo elaborado:
 who | grep  "$data" | cut -f1 -d" "
-`
+```
