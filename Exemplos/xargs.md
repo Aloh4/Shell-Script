@@ -186,7 +186,7 @@ ls -l | grep " root " | cut -c39- | xargs rm
 find . -type f -follow | xargs ls -al | tr -s ' ' | cut -f3 -d' ' | sort -u
 ```
 
-**Substituir alvo/target {}. com xargs e bash !! **
+**Substituir alvo/target {}. com xargs e bash !!**
 
 * Encontra arquivos ordinários, com nome "*.txt"
 * Envia a listagem para xargs
