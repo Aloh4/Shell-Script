@@ -2,21 +2,23 @@
 
 * Substitui para substituir, comprimir, remover caracteres
 
-Sintáxe: ` tr [options] CAD1 [CAD2]`
+* Sintáxe: ` tr [options] CAD1 [CAD2]`
 
 * Recebe o texto via stdin
 * Por isso, é necessario apontar uma entrada, Ex: `tr -opcoes < arquivo-entrada > arquivo-saida` 
 * Troca as ocorrências de `CAD1` pelo seu correspondente em `CAD2`
 
 
-Principais opções:
+## Principais opções:
 
+```
 Opção  	  Significado 
 -s	  	  Comprime n ocorrências de CAD1 em apenas uma  
 -d	  	  Remove os caracteres de CAD1  
+```
+* Escape Sequences
 
-Escape Sequences
-
+```
 Seqüência  	  Significado  	  		Octal
 \t	  		  Tabulação  			\011
 \n	  		  Nova linha  			\012
@@ -24,38 +26,44 @@ Seqüência  	  Significado  	  		Octal
 \f	  		  Nova Página  			\014
 \r	  		  Início da linha <^M>  \015
 \\	  		  Uma barra invertida  	\0134
+```
 -----
-Trocando caracteres:
+## Trocando caracteres:
 
-#Trocar as ocorrências de O por A
+**Trocar as ocorrências de O por A**
+```
 $echo Exemplo bobo | tr o a
 Exempla baba
 O correto: $ tr o a <<< "Exemplo bobo"
-
-# Traduzir valor de váriável (Maiúsculo/Minúsculo)
+```
+**Traduzir valor de váriável (Maiúsculo/Minúsculo)**
+```  
 ## Resp=$(tr SN sn <<< "$Resp ") # Troca todo S ou N (maiúsculo) pelo seu correspondente minúsculo
 echo "Insira Sim ou Nao"
 read resp
 resp=$(tr SN sn <<< "$resp ")
 echo "$resp"
-
-#Transformar letras maiúsculas em minúsculas de um arquivo
+```
+**Transformar letras maiúsculas em minúsculas de um arquivo**
+```
 $ tr A-Z a-z < arq-maisculo > /tmp/$$
 $ mv -f /tmp/$$ arq-minusculo
-
-#Transformar letras maiúsculas em minúsculas de um arquivo
+```
+**Transformar letras maiúsculas em minúsculas de um arquivo**
+```
 $ tr '\n' ' ' < entrada.txt > saída.txt
-
-#Maiúsculas em minúsculas:
+```
+**Maiúsculas em minúsculas:**
+```
 tr '[:upper:]' '[:lower:]'
-
+```
 
 -----
-# Removendo caracteres 
+## Removendo caracteres 
 
 * Usa o mesmo conceito de troca, utilizando escape sequences ou blank spaces
 
-# Para testes, tornar o arquivo confuso, executavel
+**Para testes, tornar o arquivo confuso, executavel**
 ```
 $ cat confuso
 echo leia Programação Shell Linux do Julio Cezar Neves > livro;cat livro;pwd;ls;rm -f lixo 2>/dev/null;cd ~
@@ -75,7 +83,7 @@ cd ~
 ```
 
 -----
-#Comprimir caracteres (-s squeeze-repeats)
+## Comprimir caracteres (-s squeeze-repeats)
 
 ```
 $ paste -s date-atual date-passado
@@ -104,12 +112,12 @@ cat date-atual date-passado | tr -s " " | cut -f4 -d " "
 10:12:33
 ```
 
-# Remover tabs
+**Remover tabs**
+```
 $cat olts | tr -s "\t"
-
+```
 **OBS**
-## Pode-se usar intervalos ou valores especificos
-
+**Pode-se usar intervalos ou valores especificos**
 ```
 ## Pode-se usar intervalos ou valores especificos
 $ cat > aloha
@@ -125,13 +133,13 @@ A ... B
 ** Obs: Pode-se usar escape sequences para, como no exemplo "Remover OLTS"
 
 -----
-Deletando caracteres 
+## Deletando caracteres 
 
 * A opção -d remove o caractere especificado em todo o arquivo
 
-## Removendo carriage-return em arquivos windows
+**Removendo carriage-return em arquivos windows**
 
-```
+`
 $ cat -ve ArqDoDOS.txt
 Este arquivo^M$$
 foi gerado pelo^M$$
@@ -141,12 +149,14 @@ ftp mal feito.^M$$
 
 $ tr -d '\r' < ArqDoDOS.txt > /tmp/$$
 $ mv -f /tmp/$$ ArqDoDOS.txt
-```
+`
 
-## Procurar usuarios logados a mais de um dia
+**Procurar usuarios logados a mais de um dia**
+`
 data=$(date | cut -c5-10)
 data=$(who | tr -s " " | cut -f3 -d" ")
 ##ou...
 who | grep -v "$data"
 ##Exemplo elaborado:
 who | grep  "$data" | cut -f1 -d" "
+`
