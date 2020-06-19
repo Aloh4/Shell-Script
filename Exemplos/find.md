@@ -19,7 +19,7 @@ Parâmetros
 CAM		Caminhos de diretório a partir do qual irá procurar pelos arquivos ("a partir" porque é recursivo e, por isso, sempre tentará entrar pelos subdiretórios "pendurados" neste);
 EXPR	Define quais critérios de pesquisa. Pode ser uma combinação entre vários tipos de procura;
 ACAO	Define que ação executar com os arquivos que atenderem aos critérios de pesquisa definidos por EXPR.
-
+```
 
 ## Principais critérios de pesquisa:
 
@@ -29,10 +29,11 @@ Opção		Resultado
 -user		Procura arquivos que tenham usuário como dono;
 -group		Procura arquivos que tenham grupo como grupo dono;
 -type c		Procura por arquivos que tenham o tipo c, correspondente à letra do tipo do arquivo. Os tipos aceitos estão na tabela a seguir:
+```
 
+## Valores de c na opção acima	Tipo de arquivo procurado:**
 
-* Valores de c na opção acima	Tipo de arquivo procurado:
-
+```
 b								Arquivo especial acessado a bloco
 c								Arquivo especial acessado a caractere
 d								Diretório
@@ -50,7 +51,6 @@ w									Palavras (2 bytes)
 -atime ±d							Procura por arquivos que foram acessados há mais (+d) de d dias ou a menos (-d) de d dias;
 -ctime ±d							Procura por arquivos cujo status mudou há mais (+d) de d dias ou a menos (-d) de d dias;
 -mtime ±d							Procura por arquivos cujos dados foram modificados há mais (+d) de d dias ou a menos (-d) de d dias;
-
 ```
 
 ## Principais ações
@@ -130,8 +130,6 @@ Y			Ano com 4 dígitos
 ** Exemplos práticos FIND: **
 
 ```
-## FIND
- 
 ## Procurar discos
 find / -type b
 
@@ -158,13 +156,14 @@ find . -name 'aloha' -ok -exec grep -E '^[Ff]' {} \;
 
 ## Remove arquivos com mais de um mega e acessado a mais de 60 dias
 find . -type f -size +1000000c -atime +60 -exec rm {} \;
-```
+
 -type f				Todos os arquivos regulares (normais)
 -size +1000000c		Tamanho maior do que 1000000 de caracteres (+1000000c)
 -atime +60			Último acesso há mais de 60 (+60) dias.
 ```
 
-##Backup com find
+## Backup com find
+```
 find . -atime -1 -size +100c -exec cp {}{,.bkp} \;
 
 ## Procura arquivos no diretório atual
@@ -178,22 +177,29 @@ cp: -r not specified; omitting directory '.'
 aloha.bkp
 arq.bkp
 teste.bkp
+```
 
 ## Exibir informações adicionais com printf
+```
 find . -name "teste" -printf '%t %p %g \n'
 saida: Wed May 20 00:49:47.5546851480 2020 ./teste root
-
+```
 ## Formatar saida com printf
+```
 find . -name "teste" -printf '%AA %AHH%AMM %Ap \n'
 Wednesday 00H49M AM
 
 find . -name "teste" -printf '%Ax %AHH%AMM %Ap \n'
 05/20/2020 00H49M AM
+```
 
 ## Listar arquivos por ordem de tamanho
+```
 find . -name ".b*" -printf '%s\t%p\n' | sort -n   # \t é um <TAB>
+```
 
 ## Listar arquivos por data e hora de ultima alteração
+```
 find . -name ".b*" -printf '%TY-%Tm-%Td %TH:%TM:%TS %p\n' | sort
 ```
 
