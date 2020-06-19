@@ -1,3 +1,18 @@
+## Dica:
+
+```
+A execução de arquivos usando ./ acontece pois, o diretório atual
+não está na variável que possui todos os diretórios pesquisados para localizarmos arquivos ($PATH)
+
+A solução é:
+
+echo 'PATH:$PATH:.' >> ~/.bashrc
+source ~/.bashrc
+
+1 - Insere na última linha do arquivo .bashrc o PATH:$PATH:. (agrega o diretório corrente a esta variável)
+2 - Executa o arquivo com source para a alteração entrar em vigor
+```
+
 ## CAT ARQ | grep ou etc.. ` É ERRADO ` !!!
 ## Correto
 ```
