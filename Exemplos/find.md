@@ -31,7 +31,7 @@ Opção		Resultado
 -type c		Procura por arquivos que tenham o tipo c, correspondente à letra do tipo do arquivo. Os tipos aceitos estão na tabela a seguir:
 ```
 
-## Valores de c na opção acima	Tipo de arquivo procurado:**
+## Valores de c na opção acima	Tipo de arquivo procurado:
 
 ```
 b								Arquivo especial acessado a bloco
