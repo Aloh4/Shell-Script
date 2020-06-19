@@ -58,7 +58,7 @@ $ paste par -s -d + | bc
 30
 ```
 
-## Outros exemplos com delimitadores:
+## Delimitadores Paste:
 
 ```
 #Aceitou mais de um separador, mas somente um após cada coluna criada pelo comando
@@ -78,7 +78,8 @@ arq1    arq2    arq3
 arq4    arq5    arq6
 ```
 
-## Mais exemplos:
+## Exemplos práticos:
+
 ```
 $ cat arq1
 predisposição
@@ -97,50 +98,6 @@ primário
 promotor
 ```
 
-**Definir cabeçalho com PASTE**
-```
-$ paste impar par > numeros		# Gravando a saída em numeros
-$ cat numeros
-1       2
-3       4
-5       6
-7       8
-9       10
-
-# Cat tem 2 membros, 
-# A entrada default (echo, definida em -) e o arquivo numeros
-# Listou-o um após o outro
-echo -e 'Impares\tPares\n=======\t=====' | cat - numeros
-Impares Pares
-======= =====
-1       2
-3       4
-5       6
-7       8
-9       10
-
-# Poderia-se usar echo -e 'Impares\tPares\n=======\t=====' | cat - <(paste impar par)
-# A saída de echo é enviada para o traço
-# <() substituição de processos (ver video), manda a execução para dentro de um arquivo temporário a ser lido por CAT
-# cat lista a saída de echo pelo -, paste envia sua saída para -, e será exibido abaixo da saída de echo
-$ echo -e 'Impar\tPar' | cat - <(paste <(seq 1 2 9) <(seq 2 2 10))
-ou...
-$ echo -e 'Impar\tPar' | cat - <(paste impar par)
-
-## Versões // Cálculos resumidos
-seq 4 | paste -sd\* 
-1*2*3*4
-seq 4 | paste -sd\* | bc
-24
-seq -s\* 5 (versão resumida)
-1*2*3*4*5
-seq -s\* 5 | bc (versão resumida)
-120
-
-** Exemplos práticos PASTE **
-```
-
-**Exemplos Práticos**
 ```
 $ paste impar par		// A saída será uma do lado da outra, e não em sobreposição como seria com o cat
 1	2
@@ -166,26 +123,6 @@ arq4    arq5    arq6
 $ ls | paste - - -		// Traço recebe a entrada primária (stdin)
 arq1    arq2    arq3
 arq4    arq5    arq6
-```
-
-**Mais exemplos:**
-
-```
-$ cat arq1
-predisposição
-privilegiado
-profissional
-
-$ cat arq2
-encher
-mário
-motor
-
-## -d "" -> indica sem separador
-$ cut -c-3 arq1 | paste -d "" - arq2
-preencher
-primário
-promotor
 ```
 
 **Definir cabeçalho**
@@ -214,18 +151,5 @@ Pode-se usar:
 $ echo -e 'Impar\tPar' | cat - <(paste <(seq 1 2 9) <(seq 2 2 10))
 ou...
 $ echo -e 'Impar\tPar' | cat - <(paste impar par)
-
-```
-
-**Versões // Cálculos resumidos**
-```
-seq 4 | paste -sd\* 
-1*2*3*4
-seq 4 | paste -sd\* | bc
-24
-seq -s\* 5 (versão resumida)
-1*2*3*4*5
-seq -s\* 5 | bc (versão resumida)
-120
 
 ```
