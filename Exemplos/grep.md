@@ -37,28 +37,47 @@ Opção -f	Indica o arquivo que contém as Expressões Regulares que serão pesq
 
 **Complementares**
 
+
+**Removendo entradas:**
+
 ```
-## Pegar linha especifica do arquivo somente com grep
+grep -v "$*" musicas > /tmp/mus$$
+mv -f /tmp/mus$$ musicas
+
+1 - Utilizou a opção -v para inverter a busca do grep
+2 - Com isso, o shell devolveu tudo, menos o padrão de busca (fazendo a função 'delete')
+3 - Enviou para um arquivo temporário em /tmp/mus$$
+4 - Substitiu o arquivo original pelo criado em /tmp/mus$$, gerando uma nova listagem (com um elemento deletado)
+
+```
+
+**Pegar linha especifica do arquivo somente com grep**
+```
 grep -E '^3\b' <<< $(grep -n '.*' /etc/passwd)
 3:bin:x:2:2:bin:/bin:/usr/sbin/nologin
+```
 
-1244  grep -Eo '^[A-Za-z]+:x:([0-9]+):\1'  /etc/passwd | grep -o '^[A-Za-z]+'
-1245  grep -Eo '^[A-Za-z]+:x:([0-9]+):\1'  /etc/passwd | grep -o '^[A-Za-z]*'
-
-#grep -f usus /etc/passwd // -> Pesquisa em /etc/passm utilizando a cadeia de caracteres de usus
-
+**Pesquisa em /etc/passm utilizando a cadeia de caracteres do arquivo usus**
+```
+#grep -f usus /etc/passwd
 # ls -l | grep ^d| grep -o '[^ ]*$' <- apenas os nomes dos subdiretorios do diretório corrente
+```
 
 ##Apenas nomes de users com GUID:UID iguais
+```
 root@whoami:~# grep -Eo '^[A-Za-z]+' <<< $(grep -Eo '^[A-Za-z]+:x:([0-9]+):\1' /etc/passwd)
+```
 
-Para procurar as linhas de um arquivo que têm exatamente 20 caracteres, posso fazer:
+**Procurar as linhas de um arquivo que têm exatamente 20 caracteres, posso fazer:**
+```
 grep -E '^.{20}$' arquivo
 
 ou sem a opção -E, colocando uma contrabarra antes de cada caractere que configura Expressão Regular avançada:
 grep '^.\{20\}$' arquivo 
+```
 
 ## Precisam da opção -E
+```
 Ponto de interrogação	?
 Sinal de adição	+
 Parênteses	()
