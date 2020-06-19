@@ -1,4 +1,4 @@
-#Passagem de parâmetros:
+## Passagem de parâmetros:
 
 ## Significado das Principais Variáveis Referentes aos Parâmetros
 
@@ -122,7 +122,7 @@ O programa ./parametros2 recebeu 4 parâmetros:
 4o. parametro -> testar
 ```
 
-# Como faço para pegar somente o último parâmetro que foi passado de maneira dinâmica?
+## Como faço para pegar somente o último parâmetro que foi passado de maneira dinâmica?
 
 **Garantindo que o script receberá N parametros**
 
