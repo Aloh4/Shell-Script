@@ -8,8 +8,7 @@
 Sintáxe: `paste arq1 arq2 ... arqN` 
 
 ------
-
-Exemplos:
+**Exemplos:**
 
 ```
 $ seq 1 3 9 > impar
@@ -28,11 +27,9 @@ cat impar par
 7
 9
 2
-...
-
 ```
------
-Opção -s (serial)
+------
+## Opção -s (serial)
 
 * Exibe uma linha, ao invez de linhas paralelas 
 * Ou seja coloca lado a lado linhas de um arquivo "Oque está em pé, deita"
@@ -45,12 +42,13 @@ $ paste -s impar par	// "Deita" tudo que está em pé (exibe linhas em colunas)
 
 ```
 -----
-Opção -d (delimiter)
+## Opção -d (delimiter)
 
 * Defini delimitadores, como o cut
 * Pode-se especificar um novo delimitador com a opção -d
 * Aceita vários (separadores) delimitadores
 
+```
 $ paste par -s -d +
 2+4+6+8+10
 
@@ -58,9 +56,11 @@ $ paste par -s -d +
 
 $ paste par -s -d + | bc
 30
+```
 
 ## Outros exemplos com delimitadores:
 
+```
 #Aceitou mais de um separador, mas somente um após cada coluna criada pelo comando
 $ ls | paste -s -d '\t\t\n'		# Poderia ser -sd'\t\t\n' ou -sd '\t\t\n'
 arq1    arq2    arq3
@@ -76,6 +76,7 @@ arq4    arq5    arq6
 $ ls | paste - - -
 arq1    arq2    arq3
 arq4    arq5    arq6
+```
 
 ## Mais exemplos:
 ```
@@ -96,8 +97,8 @@ primário
 promotor
 ```
 
-# Definir cabeçalho
-
+**Definir cabeçalho com PASTE**
+```
 $ paste impar par > numeros		# Gravando a saída em numeros
 $ cat numeros
 1       2
@@ -138,8 +139,9 @@ seq -s\* 5 | bc (versão resumida)
 
 ** Exemplos práticos PASTE **
 ```
-## PASTE
 
+**Exemplos Práticos**
+```
 $ paste impar par		// A saída será uma do lado da outra, e não em sobreposição como seria com o cat
 1	2
 3	4
@@ -150,10 +152,10 @@ $ paste impar par		// A saída será uma do lado da outra, e não em sobreposiç
 $ paste -s impar par	// "Deita" tudo que está em pé (exibe linhas em colunas)
 1       3       5       7       9
 2       4       6       8       10
+```
 
-## Delimitadores
-## -d "" indica sem delimitador
-
+**Com delimitadores**
+```
 $ paste par -s -d +
 2+4+6+8+10
 
@@ -164,8 +166,9 @@ arq4    arq5    arq6
 $ ls | paste - - -		// Traço recebe a entrada primária (stdin)
 arq1    arq2    arq3
 arq4    arq5    arq6
+```
 
-## Mais exemplos:
+**Mais exemplos:**
 
 ```
 $ cat arq1
@@ -183,9 +186,10 @@ $ cut -c-3 arq1 | paste -d "" - arq2
 preencher
 primário
 promotor
+```
 
-# Definir cabeçalho
-
+**Definir cabeçalho**
+```
 $ paste impar par > numeros		# Gravando a saída em numeros
 $ cat numeros
 1       2
@@ -213,8 +217,8 @@ $ echo -e 'Impar\tPar' | cat - <(paste impar par)
 
 ```
 
-## Versões // Cálculos resumidos
-
+**Versões // Cálculos resumidos**
+```
 seq 4 | paste -sd\* 
 1*2*3*4
 seq 4 | paste -sd\* | bc
