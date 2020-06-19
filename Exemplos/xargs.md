@@ -156,6 +156,7 @@ linha 2
 # Toda lista de find é enviada para xargs -> grep
 
 cat grepr
+-> find $1 -type f -print | xargs grep -l "$2"
 
 # Grep recursivo
 # Pesquisa a cadeia de caracteres definida em $2 a partir do diretorio $1
