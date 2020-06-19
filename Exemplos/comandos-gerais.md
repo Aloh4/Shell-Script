@@ -1,6 +1,6 @@
 ```
-#		  // Simboliza comentários
-$cd -	// Volta para o diretório anterior
+#   // Simboliza comentários
+$cd // Volta para o diretório anterior
 
 ## Modo inteligente e rápido para criar arquivo:
 $ > temp
