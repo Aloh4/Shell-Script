@@ -34,24 +34,30 @@ ARG1 > ARG2		Volta 1 se ARG1 maior que ARG2, senão 0
 * Usado quando há casas decimais
 * Caso o nº já usar de casas decimais, não há necessidade de usar o scale 
 
+```
 $ echo "(2 + 3) * 5" | bc          # Parênteses usados para dar precedência
 25
 Ou... bc <<< "(2 + 3) * 5"
-
-* Para se utilizar casas decimais, a precição será feita com a opção scale.
+```
+**Para se utilizar casas decimais, a precição será feita com a opção scale.**
+```
 $ echo "scale=2; 7*5/3" | bc
 11.66
-
-## Quando um fator é informado com  decimais, não é necessário utilizar o scale.
+```
+**Quando um fator é informado com  decimais, não é necessário utilizar o scale.**
+```
 $ echo "scale=3; 12.345*3" | bc
 37.035
-
-## Usando variáveis
+```
+**Usando variáveis**
+```
 $ num=5
 $ echo "scale=2; ((3 + 2) * $num + 4) / 3" | bc
 9.66
+```
 
-## Somando nº de uma coluna com CUT e BC
+**Somando nº de uma coluna com CUT e BC**
+``` 
 # TR transformou todas as new-lines em +
 # Colocou zero adicional ao fim, para não gerar erro no bc
 $ echo $(cut -f3 num | tr '\n' +)0 | bc
@@ -59,38 +65,52 @@ ou...
 $ echo $(cut -f3 num | tr -s '\n' +)0 | bc
 ou...
 $cut -f3 colunas-arit | paste -sd+ | bc
+```
 
-
-## Somar 2 colunas:
+**Somar 2 colunas:**
+```
 cut -f2-3 colunas-arit | tr "\t" + | bc
-
+```
 ---
 ## Mudança de base com BC
-## obase=BASE_SAIDA 
+
+**obase=BASE_SAIDA**
+```
 $ echo "obase=16; 11579594" | bc
 B0B0CA          # B, zero, B, zero, C e A
-## ibase=BASE_ENTRADA -> retorna decimal por padrão
+```
+**ibase=BASE_ENTRADA -> retorna decimal por padrão**
+```
 $ echo "ibase=16; B0B0CA" | bc
 11579594
-
 ```
-## Transformou input decimal em output hexadecimal
+
+**Transformou input decimal em output hexadecimal**
+```
 echo "obase=16; 31" | bc
 1F
-## Transformou input hexadecimal em output decimal
+```
+**Transformou input hexadecimal em output decimal**
+```
 echo "ibase=16; 1F" | bc
 31
-
+```
 ## Usando 2 argumentos:
-# Output hexadecimal, input decimal
+
+**Output hexadecimal, input decimal**
+```
 echo "obase=16; ibase=10; 31" | bc
 1F
+```
 
-# Output decimal, input hexadecimal
+**Output decimal, input hexadecimal**
+```
 echo "obase=10; ibase=16; 1F" | bc
 31
+```
 
-## Exemplo: Octal para hexadecimal
+**Exemplo: Octal para hexadecimal**
+```
 ## Obs: Sempre usar obase primeiro
 ## Quando você especifica ibase=8 e depois obase=16, ele interpretará 16 na base 8, ou seja, usará a base 14 como saída
 # Binario=2, Octal=8, Hexa=16, Decimal=10
@@ -103,7 +123,7 @@ $ echo "obase=16; ibase=8; 512" | bc
 ```
 
 -----
-Interpretador aritmético do Shell
+## Interpretador aritmético do Shell
 
 * Sintáxe `$((expressao aritmetica))`
 * Obs: Alguns shells não entende essa expressão, ex: Bourne Shell (sh)
@@ -132,7 +152,6 @@ Expressão	Resultado
 &&			E lógico
 ||			OU lógico
 ```
-
 
 ## Exemplos:
 
@@ -188,17 +207,18 @@ user	0m0.004s
 sys	0m0.000s
 
 ```
-
-## Operador ternário -------------------------------
+-------
+## Operador ternário
 
 Sintáxe: `COND ? VERDADEIRO : FALSO`
 * OBS: Tanto VERDADEIRO quanto FALSO, devem devolver valores numéricos.
 
-COND		É uma condição numérica;
+```
+COND		    É uma condição numérica;
 VERDADEIRO	Será executado caso COND seja verdadeira;
-FALSO		Será executado caso COND seja falso.
-
-* Exemplos:
+FALSO		    Será executado caso COND seja falso.
+```
+**Exemplos:**
 ```
 $ echo $var
 50
@@ -210,13 +230,15 @@ $ echo $var
 50
 ```
 
-Caso a variável $var seja maior que 40 (var>40), então (?) faça 
+## Caso a variável $var seja maior que 40 (var>40), então (?) faça 
+```
 $var igual a $var menos 40 (var-40), senão (:) faça 
 $var igual a $var mais 40 (var+40). 
 ** Interrogação (?) e dois pontos (:) fazem o papel de então e senão **
+```
 
-Outros exemplos (maneira intrínseca (builtin) com let)
-
+**Outros exemplos (maneira intrínseca (builtin) com let**
+```
 $ echo $var
 50
 $ let var='var>40 ? var-40 : var+40'
@@ -225,8 +247,9 @@ $ echo $var
 $ let var='var>40 ? var-40 : var+40'
 $ echo $var
 50
-
-## Trocando de base -------------------------------
+```
+-------
+## Trocando de base 
 
 * Para trabalhar com bases diferentes da decimal, usa-se
 
@@ -240,7 +263,7 @@ $ echo $var
 * Obs: Constantes começadas em zero são interpretadas como octal, se iniciadas com 0x ou 0X são tratadas como hexadecimal
 
 
-* Exemplos
+**Exemplos**
 ```
 
 $ echo $[2#11]
