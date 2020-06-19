@@ -123,7 +123,9 @@ O programa ./parametros2 recebeu 4 parâmetros:
 ```
 
 # Como faço para pegar somente o último parâmetro que foi passado de maneira dinâmica?
+
 # Garantindo que o script receberá N parametros
+
 ```
 set a b c
 shift $(($# - 1)) # Mata todos menos o último parâmetro
