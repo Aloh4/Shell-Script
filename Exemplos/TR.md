@@ -62,7 +62,7 @@ echo "$resp"
 $ tr A-Z a-z < arq-maisculo > /tmp/$$
 $ mv -f /tmp/$$ arq-minusculo
 ```
-**Transformar letras maiúsculas em minúsculas de um arquivo**
+**Transformar letras maiúsculas em minúsculas de um arquivo V2**
 ```
 $ tr '\n' ' ' < entrada.txt > saída.txt
 ```
