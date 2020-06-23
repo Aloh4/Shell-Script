@@ -113,7 +113,7 @@ Exclamação !	Negar
 
 **Exemplos**
 
-**Testa doretórios**
+**Testa diretórios**
 ```
 #!/bin/bash
 #
