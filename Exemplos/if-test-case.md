@@ -11,6 +11,8 @@ One line:
 
 if CMD; then CMD1; else CMD2; fi
 
+Multiple line:
+
 if CMD
 then
     CMD1
