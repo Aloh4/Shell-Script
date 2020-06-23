@@ -1,4 +1,4 @@
-#O comando IF
+# O comando IF
 
 * Em shell, ele é um testador de intruções(comando), não condições(comparações)
 * Ele é responsável por testar a variável `$?`, junto com o `test`
@@ -197,7 +197,7 @@ fi
 ```
 
 -------
-#Abreviar o comando test
+# Abreviar o comando test
 
 * Com o conector `E` e a primeira condição verdadeira, o resultado final pode ser Verdadeiro ou Falso (depende da 2º condição)
 * Com o conector `OU`, caso a primeira condição seja verdadeira, 
@@ -230,7 +230,7 @@ cd dir
 }
 ```
 --------
-#Conectores Lógicos:
+# Conectores Lógicos:
 
 * `&&` equivale ao then 
 * `||` equivale ao else
@@ -365,7 +365,7 @@ Horário aceito
 ```
 
 ----------
-#Operadores numéricos:
+# Operadores numéricos:
 
 * Aqui podemos usar ` ==, !=, >, >=, <, <= `
 
@@ -376,7 +376,7 @@ valido
 
 ```
 ----------
-#O comando CASE
+# O comando CASE
 
 * Compara padrões e executa blocos. 
 
