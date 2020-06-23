@@ -175,7 +175,7 @@ fi
 
 ```
 
-**Testando conectores **
+**Testando conectores**
 
 ```
 Obs: -a tem precedencia sobre -o.
