@@ -270,7 +270,7 @@ ls fff && ls xxx
 ls: cannot access 'fff': No such file or directory
 ```
 --------
-#Novo comando test (Com metacaracteres)
+# Novo comando test (Com metacaracteres)
 
 * Faz uso dos caracteres de expansão de nomes de arquivos
 * ` ? * [...] ...etc `
