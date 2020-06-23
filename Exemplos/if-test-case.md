@@ -356,7 +356,7 @@ echo ${BASH_REMATCH[@]}	# Se não houver casamento, retorna vazio.
 
 ```
 
-**Resultados (errados)**
+**Resultados**
 
 ```
 1) Passando um horário válido:
