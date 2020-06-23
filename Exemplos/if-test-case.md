@@ -51,7 +51,7 @@ fi
 ```
 
 -------
-#O comando test (dicas)
+# O comando test (dicas)
 
 * O test é built-in do shell `[ ... ]`
 * Sua nova e indicada sintaxe é `[[ ... ]]`
