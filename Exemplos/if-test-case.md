@@ -442,7 +442,7 @@ esac
 Caractere	Significado
 *			Qualquer caractere ocorrendo zero ou mais vezes
 ?			Qualquer caractere ocorrendo uma vez
-[...]		Lista de caracteres
+[...]		Lista de caracteres e classes POSIX
 |			"OU" lógico
 ```
 
