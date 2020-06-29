@@ -7,7 +7,7 @@ Variável	Significado
 $0		Contém o nome do programa  
 $#		Contém a quantidade de parâmetros passados  
 $* ou  $@	Contém o conjunto de todos os parâmetros (idêntico ao $@, difere somente em parâmetro(s) com espaço em branco)  
-"$!" 		Possui o número do último processo
+"$!" 		Possui o número do último processo em background
 "$?" 		Contém o retorno do último comando executado
 
 root@whoami:~# ls named
