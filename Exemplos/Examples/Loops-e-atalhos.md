@@ -124,9 +124,9 @@ $ for i in $(seq 0 3 9)
 
 Onde:
 
-VAR=INI - Significa que a variável VAR será inicializada com o valor INI;
-COND - Siginifica que o loop ou laço do for será executado enquanto VAR não atingir a condição COND;
-INCR - Significa o incremento (positivo ou negativo) que a variável VAR sofrerá em cada passada do loop.
+* VAR=INI - Significa que a variável VAR será inicializada com o valor INI;
+* COND - Siginifica que o loop ou laço do for será executado enquanto VAR não atingir a condição COND;
+* INCR - Significa o incremento (positivo ou negativo) que a variável VAR sofrerá em cada passada do loop.
 
 
 **Sintáxe:**
