@@ -464,7 +464,7 @@ done < numeros
 ```
 
 
-**Contando sem usar cut**
+**Cortando sem usar cut**
 
 ```
 # Lista UserID e Username
