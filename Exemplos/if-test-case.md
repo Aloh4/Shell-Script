@@ -157,7 +157,42 @@ then
 fi
 cd dir
 ```
+**Teste com IF**
 
+```
+$ cat vira
+#!/bin/bash
+#
+#  vira - vi resguardando arquivo anterior
+#         == =            »
+
+# Verificando se foi passado 1 parametro
+if  [ "$#" -ne 1 ]
+then
+    echo "Erro -> Uso: $0 "
+    exit 1
+fi
+
+Arq=$1
+# Caso o arquivo não exista, nao ha copia para ser salva
+if  [ ! -f "$Arq" ]
+then
+    vi $Arq
+    exit 0
+fi
+
+# Se nao puder alterar o arquivo vou usar o vi para que?
+if  [ ! -w "$Arq" ]
+then
+    echo "Voce nao tem direito de gravacao em $Arq"
+    exit 2
+fi
+
+# Ja que esta tudo OK, vou salvar a copia e chamar o vi
+cp -f $Arq $Arq~
+vi $Arq
+exit 0
+```
 
 **Comparar números**
 
