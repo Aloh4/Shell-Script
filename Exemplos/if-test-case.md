@@ -158,6 +158,8 @@ fi
 cd dir
 ```
 **Teste com IF**
+* Recebe como parametro, o nome de um arquivo;
+* Se executado, salvará este arquivo com o nome original, seguido de ~, e colocorá este arquivo dentro do vi
 
 ```
 $ cat vira
