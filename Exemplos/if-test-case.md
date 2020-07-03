@@ -489,3 +489,12 @@ case "$1" in
         #     ... mesmo com esse padrão maluco.
 esac
 ```
+**Valida se dir existe**
+```
+#!/bin/bash
+var=$1
+case dir in
+	[[ -f $var ]]) echo arquivo existe;;
+	*) echo arquivo nao existe
+	esac
+```
