@@ -310,7 +310,7 @@ id++, id--		pós-incremento e pós-decremento de variáveis
 ------
 # O comando while
 
-* Executa o bloco de comandos, enquanto um comando monitorado for verdadeiro,
+* O while testa um comando e executa um bloco de instruções enquanto este comando for bem sucedido
 * Para testar condições, utilize `while` testando o comando `teste`
 * Como observado no comando `if`
 
