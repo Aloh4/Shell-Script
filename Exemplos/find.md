@@ -203,3 +203,13 @@ find . -name ".b*" -printf '%s\t%p\n' | sort -n   # \t é um <TAB>
 find . -name ".b*" -printf '%TY-%Tm-%Td %TH:%TM:%TS %p\n' | sort
 ```
 
+## Pesquisar arquivos cujo o ultimo acesso foi a mais tempo
+```
+find . -type f -printf '%AY%Am%Ad\t%AH:%AM\t%p\n' | sort -n				
+
+%A = data de acesso
+%p = Nome do programa
+Os parametros % são coerentes ao comando date
+
+```
+
