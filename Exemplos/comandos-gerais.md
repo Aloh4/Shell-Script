@@ -52,3 +52,21 @@ $ seq 10 | tail -5    # Lista as 5 últimas
 $ seq 10 | tail -n 4    # Lista as 4 últimas
 $ seq 10 | tail -n +3    # Lista as últimas a partir da 3ª
 ```
+
+**tipos de echo**
+```
+Sem -n
+echo "Escreva: "; read var
+Escreva:
+
+
+Com -n (nao salta linha)
+root@whoami:~# echo -n "Escreva: "; read var
+Escreva:
+```
+
+**Enxergar caracteres especiais**
+```
+cat -et # -e representa enter($), -t representa TAB (^I)
+```
+
