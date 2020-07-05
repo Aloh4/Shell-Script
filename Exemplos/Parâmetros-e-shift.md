@@ -10,6 +10,12 @@ $* ou  $@	Contém o conjunto de todos os parâmetros (idêntico ao $@, difere so
 "$!" 		Possui o número do último processo em background
 "$?" 		Contém o retorno do último comando executado
 
+-- Contar ??--
+msg=teste
+echo "${#msg}"
+5
+-------------
+
 root@whoami:~# ls named
 ls: cannot access 'named': No such file or directory
 root@whoami:~# echo $?
