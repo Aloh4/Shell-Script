@@ -6,7 +6,8 @@
 Variável	Significado
 $0		Contém o nome do programa  
 $#		Contém a quantidade de parâmetros passados  
-$* ou  $@	Contém o conjunto de todos os parâmetros (idêntico ao $@, difere somente em parâmetro(s) com espaço em branco)  
+$* ou  $@	Contém o conjunto de todos os parâmetros (idêntico ao $@, difere somente em parâmetro(s) com espaço em branco) 
+		Elimina a necessidade de passar parâmetros entre aspas "param1 param2 ..."
 "$!" 		Possui o número do último processo em background
 "$?" 		Contém o retorno do último comando executado
 
