@@ -418,7 +418,7 @@ Horário aceito
 ```
 
 ----------
-# Operadores numéricos:
+# Operadores aritméticos `(( 1 == 1 ))` :
 
 * Aqui podemos usar ` ==, !=, >, >=, <, <= `
 
