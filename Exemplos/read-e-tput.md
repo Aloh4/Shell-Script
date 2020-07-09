@@ -163,6 +163,8 @@ Símbolo	Cor
 * Coloca cada item da lista, em uma variável
 * Se a quantidade de variáveis for menor que a quantidade de itens
 * A última variável recebe o restante
+* echo = sempre tem um newline embutido
+* read = não tem
 
 **Exemplo**
 
@@ -213,6 +215,18 @@ $ IFS="$oIFS"          # Restaurando o valor original do IFS
 $IFS+read
 e
 $LANG+date
+
+
+read v1 v2
+11 22
+echo $v1 -- $v2
+11 -- 22
+IFS=: read v1 v2 #IFS será alterado somente para o read e lerá os : como separador
+11:22
+echo $v1 -- $v2
+11 -- 22
+echo $v1 -- $v2
+
 ```
 
 **Exemplo `$LANG+date`**
@@ -344,6 +358,13 @@ done < arquivo
 A
 B
 C
+
+outra forma:
+
+while read linha #Nao gera subshell
+do
+echo $linha
+done
 ```
 
 **2 -  Redirecionando a saída de um cat para o while**
@@ -382,7 +403,7 @@ uva
 cat lista_frutas.sh
 #!/bin/bash
 # Exemplo de read passando arquivo por pipe
-cat frutas |
+cat frutas | #gera subshell
         while read fruta
         do
                 echo $((++ContaFruta)) $fruta # Incrementa o contador e lista-o com cada fruta
