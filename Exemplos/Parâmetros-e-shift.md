@@ -92,6 +92,14 @@ Horário válido
 * São formados por apenas 1 número
 * Por isso variáveis não podem se iniciar com números !
 
+* Pode-se usar o set para passar parâmetros:
+```
+set teste
+root@whoami:~# echo $1
+teste
+
+```
+
 ```
 *Obs: Utilizou \ para o shell não interpretar as aspas, sendo exibida durante a execução do programa.
 root@whoami:~/shell# cat parametros
