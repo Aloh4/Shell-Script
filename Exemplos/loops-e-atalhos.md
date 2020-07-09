@@ -102,6 +102,33 @@ do
     done
 done
 ```
+**Contando passagem de parâmetros**
+```
+~# ./exe8.sh
+Programa sem parametros
+Saindo...
+
+~# ./exe8.sh teste1 teste2 teste3
+O 1º parametro é teste1
+O 2º parametro é teste2
+O 3º parametro é teste3
+
+:~# cat exe8.sh
+#!/bin/bash
+#
+(($# == 0)) && {        #Valida a passagem de parâmetros
+echo "Programa sem parametros
+Saindo..."
+exit 1
+}
+
+for parametros_passados #Sem in, o for pega cada parâmetro passado
+do
+        echo -e "O $((++contador))º parametro é $parametros_passados"
+done
+
+```
+
 
 ## Contagem com FOR
 ```
