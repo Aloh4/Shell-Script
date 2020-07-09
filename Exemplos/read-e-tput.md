@@ -463,6 +463,27 @@ do
 done < numeros
 ```
 
+**Exemplo TPUT - receber dados do teclado**
+```
+#!/bin/bash
+#
+clear
+echo "
+        Programa:
+        Versão:
+        Arquivos:"
+
+tput cup 1 25; read prg
+tput cup 2 25; read vrs
+
+while true
+do
+        tput cup 3 25; tput el; read arq
+        [[ -z $arq ]] && break
+done
+```
+
+
 
 **Cortando sem usar cut**
 
