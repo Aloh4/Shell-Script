@@ -1,3 +1,14 @@
+## Dicas gerais
+
+```
+funcoes podem ser feitas direto no shell, basta apenas chama-la depois
+function nome { comandos }
+function nome { declare -l variaveis ; comandos }
+function nome { declare -i variaveis ; comandos }
+
+oque faz o declare? faz a variavel ser local
+```
+
 ## Funções internas
 
 * São funções declaradas dentro do próprio script
