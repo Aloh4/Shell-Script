@@ -11,11 +11,10 @@ $* ou  $@	Contém o conjunto de todos os parâmetros (idêntico ao $@, difere so
 "$!" 		Possui o número do último processo em background
 "$?" 		Contém o retorno do último comando executado
 
--- Contar ??--
+Conta os parâmetros passados:
 msg=teste
 echo "${#msg}"
 5
--------------
 
 root@whoami:~# ls named
 ls: cannot access 'named': No such file or directory
@@ -28,6 +27,63 @@ root@whoami:~# echo $?
 
 https://www.tutorialspoint.com/unix/unix-special-variables.htm
 
+```
+
+##Variaveis do sistema
+
+**$REPLY / ${REPLY}**
+```
+# A variavel `$REPLY` do bash, possui a última cadeia lida de um read
+```
+
+**${PIPESTATUS[@]}**
+```
+* Ver todas as execuções (via pipe)
+* `echo "$?"` mostra somente o status do ultimo comando (neste caso, pwd foi bem sucessido)
+* `PIPESTATUS` é um array do sistema e mostrará o status dos demais comandos via pipe
+* `[@]` significa todos os elementos do array
+
+
+ls naoexiste | pwd
+/home/whoami/shell
+ls: cannot access 'naoexiste': No such file or directory
+
+echo ${PIPESTATUS[@]}
+2 0
+
+echo ${PIPESTATUS[@]}
+0
+```
+
+**${BASH_REMATCH[@]}**
+* Array Batch-Rematch
+* Tem todos os casamentos
+```
+#!/bin/bash
+# Recebe horário como parâmetro
+# valida se está no formato HH:MM
+
+if [[ $1 =~ ^([01][0-9]|2[0-3]):([0-5][0-9])$ ]]
+then
+        echo Horário válido
+else
+        echo Horário inválido
+fi
+echo ${BASH_REMATCH[@]}
+
+##Saida
+ ./criticahora.sh 18:00
+Horário válido
+18:00 18 00
+
+
+--- é possivel acessar elementos especificos do array -- 
+echo ${BASH_REMATCH[2]}
+
+##Saida
+./criticahora.sh 18:00
+Horário válido
+00
 ```
 
 ## Parâmetros
