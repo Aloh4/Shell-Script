@@ -29,7 +29,7 @@ https://www.tutorialspoint.com/unix/unix-special-variables.htm
 
 ```
 
-##Variaveis do sistema
+## Variaveis do sistema
 
 **$REPLY / ${REPLY}**
 ```
