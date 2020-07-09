@@ -396,7 +396,7 @@ echo ${BASH_REMATCH[@]}	# Se não houver casamento, retorna vazio.
 
 # OBS:
 # BASH_REMATCH é o nome de uma variável do Shell, tipo vetor (array)
-# Armazena os dados de um casamento via Expressões Regulares utilizando o test
+# Armazena os dados de um casamento via Expressões Regulares utilizado c/ o test
 # Ou seja, ela poderia ser usado para lista elementos específicos:
 # `${BASH_REMATCH[0]} ... ${BASH_REMATCH[1]} ... ${BASH_REMATCH[2]}`
 # Lista-se todos os elementos do Array `${BASH_REMATCH[@]}`
