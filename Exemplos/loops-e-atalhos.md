@@ -12,6 +12,16 @@
 * E para cada um desses valores, executa um bloco de comandos `CMD1, CMD2 ...etc`
 * `do` e `done` podem ser subsitituidos por `{ }`
 
+**dicas**
+```
+#Redirecionar arquivo para o for:
+
+for palavra in $(<numeros.txt)
+{
+comandos
+}
+```
+
 **Sintaxe**
 ```
 for VAR in VAL1 VAL2 ... VALn
