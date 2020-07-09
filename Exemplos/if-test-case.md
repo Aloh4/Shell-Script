@@ -58,7 +58,6 @@ fi
 * Com a nova opção, pode-se usar REGEX e Expansão de arquivos
 * Para informações, utilizar `man test`
 
-
 **Exemplos**
 
 ```
@@ -269,6 +268,20 @@ mkdir dir
 cd dir 
 }
 ```
+
+**Exemplos**
+```
+ls teste {
+cmd1
+cmd2
+} || ou teste2 (SE um do comandos dentro das chaves de erro, o OU será executado)
+
+cd dir 2> /dev/null || {
+	mkdir dir
+	cd dir
+}
+```
+
 --------
 # Conectores Lógicos:
 
