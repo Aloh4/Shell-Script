@@ -20,6 +20,11 @@ grep...arq
 wc...arq
 cut...arq
 ```
+**Finalizar opcoes recebidas por um programa**
+```
+--  >> Significa fim das opcoes de um programa
+grep -o -- "A" arq
+```
 
 ## Usando echo corretamente
 ```
