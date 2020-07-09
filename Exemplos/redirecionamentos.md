@@ -25,11 +25,12 @@ CMD1 | CMD2		((pipe) CMD2 recebe como entrada a saída do comando CMD1
 
 # file descriptor - FD:
 
-&> ARQ				Redireciona stdin e stdout para o ARQ
+&> ARQ			Redireciona stdin e stdout para o ARQ
 ARQ1 >& ARQ2		Redireciona stdin e stdout de ARQ1 para ARQ2
->& ARQ1				Redireciona stdout para ARQ1 	
+>& ARQ1			Redireciona stdout para ARQ1 	
 ARQ1 <> ARQ2		Abre ARQ2 para leitura e gravação e associa a ele ARQ1
-ARQ1 >&-			Fecha toda a stdout associada ao ARQ1 (nao compativel)
+ARQ1 >&-		Fecha toda a stdout associada ao ARQ1 (nao compativel)
+>&2			Envia a saída de erros, para o mesmo lugar  da primaria
 ```
 
 **Exemplos:**
