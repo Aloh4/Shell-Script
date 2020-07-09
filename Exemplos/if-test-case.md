@@ -238,11 +238,12 @@ fi
 -------
 # Abreviar o comando test
 
-* Com o conector `E` e a primeira condição verdadeira, o resultado final pode ser Verdadeiro ou Falso (depende da 2º condição)
-* Com o conector `OU`, caso a primeira condição seja verdadeira, 
-* o resultado sempre será Verdadeiro, e se a primeira for falsa, o resultado dependerá da segunda opção.
-* Com o conector `E`, a segunda condição não será avaliada, em caso da primeira ser falsa;
-* Com o conector `OU`, a segunda será executada, somente caso a primeira seja falsa.
+**Conector AND - &&(equivalente ao then)**
+* Se o 1º for VERDADEIRO, o 2º teste será feito, mas se o 1º for falso, não há necessidade pois o resultado sempre será FALSO
+
+**Com o conector OR - || (Cumpre funções do else, sem precisa do if)**
+* Se o 1º for VERDADEIRO, o 2º teste não será feito pois sempre dará VERDADEIRO, mas se for FALSO, o 2º teste terá de ser feito
+
 
 ```
 Valores Booleanos		E			OU
