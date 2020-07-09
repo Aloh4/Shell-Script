@@ -21,6 +21,20 @@ wc...arq
 cut...arq
 ```
 
+## Usando echo corretamente
+```
+echo ..
+echo ..
+echo ..
+é errado !
+
+faça:
+echo "
+		Linha1:
+		Linha2:
+		etc... "
+```
+
 ## Modo inteligente e rápido para criar arquivo:
 
 ```
