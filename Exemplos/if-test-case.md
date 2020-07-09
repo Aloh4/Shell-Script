@@ -420,6 +420,14 @@ valido
 
 * Compara padrões e executa blocos. 
 
+**Dicas com case**
+* A partir do bash 4.0, o case recebeu mais 2 terminadores
+* ;;  - Termina o bloco de CMD e sai do case;
+* ;;& - Termina o bloco de comandos e testa a próxima condição
+* ;&  - Termina o bloco de comandos e executa (sem testar) o próximo bloco
+
+* Posso também, usar classes POSIX nas seleções do case
+
 ```
 ~/.bashrc
 export LC_COLLATE=C
