@@ -59,7 +59,9 @@ echo ${PIPESTATUS[@]}
 * Array Batch-Rematch
 * Tem todos os casamentos
 ```
+cat criticahora.sh
 #!/bin/bash
+# V1
 # Recebe horário como parâmetro
 # valida se está no formato HH:MM
 
@@ -69,13 +71,18 @@ then
 else
         echo Horário inválido
 fi
-echo ${BASH_REMATCH[@]}
 
-##Saida
- ./criticahora.sh 18:00
-Horário válido
-18:00 18 00
+echo ${BASH_REMATCH[@]}	# Se não houver casamento, retorna vazio.
 
+# OBS:
+# BASH_REMATCH é o nome de uma variável do Shell, tipo vetor (array)
+# Armazena os dados de um casamento via Expressões Regulares
+# Ou seja, ela poderia ser usado para lista elementos específicos:
+# `${BASH_REMATCH[0]} ... ${BASH_REMATCH[1]} ... ${BASH_REMATCH[2]}`
+# Lista-se todos os elementos do Array `${BASH_REMATCH[@]}`
+
+# No indice zero = casamento total ocorrido
+# Os demais indices, equivalem aos retrovisores dos grupos da REGEX.
 
 --- é possivel acessar elementos especificos do array -- 
 echo ${BASH_REMATCH[2]}
