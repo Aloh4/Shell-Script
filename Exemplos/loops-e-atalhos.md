@@ -224,6 +224,30 @@ wc -w < arquivo
 * Separador de campos
 * O For utiliza os valores dessa variável, e nao listas separadas por brancos
 
+**Dicas**
+```
+O macete sobre listar correto com "$var" é devido ao shell ler o IFS que contem espaços e enters, 
+mas o troca por apenas 1 quando ve a variavel IFS
+Sempre que o shell ver o IFS, ele o trocará por um espaço em branco
+echo $users
+root:daemon:bin:
+IFS=:
+echo $users
+root daemon bin
+
+SEMPRE SALVAR O VALOR DE IFS EM OUTRA VARIAVEL PARA RETORNO DO VALOR PADRAO !
+
+echo "$IFS" | od -h
+0000000 0920 0a0a
+0000004
+
+~# oIFS=$IFS
+~# echo "$oIFS" | od -h
+0000000 0920 0a0a
+0000004
+
+```
+
 **OBS**
 
 ```
