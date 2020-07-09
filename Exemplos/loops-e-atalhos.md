@@ -457,8 +457,8 @@ done
 -------
 # Atalhos de loop (continue e break)
 
-* `break` aborta um loop de maneira controlada
-* `continue` continua um loop antes de chegar ao `done`
+* `break` aborta um loop de maneira controlada // pula para depois do `done`
+* `continue` continua um loop antes de chegar ao `done`// volta para o `do`
 
 
 **Sintaxe**
