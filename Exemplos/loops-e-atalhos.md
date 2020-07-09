@@ -10,6 +10,7 @@
 * For em shell é `builtin`, faz parte do código fonte
 * Assume cada um dos valores da lista `VAL1, VAL2 ..etc`
 * E para cada um desses valores, executa um bloco de comandos `CMD1, CMD2 ...etc`
+* `do` e `done` podem ser subsitituidos por `{ }`
 
 **Sintaxe**
 ```
