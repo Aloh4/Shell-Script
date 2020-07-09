@@ -20,6 +20,18 @@ grep...arq
 wc...arq
 cut...arq
 ```
+
+**Validar tempo de execução**
+```
+time CMD #builtin
+which CMD #nao builtin
+```
+
+**O comando exit**
+```
+O exit manda o codigo de retorno do programa, por isso, pode assumir qualquer valor.
+```
+
 **Finalizar opcoes recebidas por um programa**
 ```
 --  >> Significa fim das opcoes de um programa
