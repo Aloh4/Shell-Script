@@ -225,8 +225,14 @@ done
 
 * Permite utilizar uma função de um determinado programa, em outro
 * Traz uma cópia dessa função, sem precisa reescrevê-la
-* Em shell, utiliza-se o `source`, para esse efeito
+* Em shell, utiliza-se o `source` ou `.`, para esse efeito
 
+**Exemplos**
+```
+source funcao_externa parametros
+. funcao_externa parametros
+
+```
 **Dicas**
 * O `bash_profile` é um dos programas que são automaticamente executados no momento do login
 * Deixa o ambiente preparado para o usuário `/home/$USER/.profile` 
