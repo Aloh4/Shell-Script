@@ -504,7 +504,41 @@ do
 done
 ```
 
+**Valida se o arquivo existe / Formatado**
+```
+#!/bin/bash
+#
+clear
+tput cup 10 21          # Posiciona para pedir nome do arquivo
+echo "Arquivo: "        # Pede nome do arquivo
+while true
+do
+        tput cup 10 30  # Posicionará 9 posições a frente (21 + arquivo: ) = 30
+        tput el         # Apaga até o fim, mas permanece na posição
+        read arq        # Le o nome do arquivo
+        [[ -z $arq ]] && exit   # Se a variável for vazia, encerre
 
+        if [[ ! -f $arq  ]]     # Se o arquivo não existir...
+        then
+                totlin=$(tput lines)            # Total de linhas da tela
+                let lin=totlin-3                # Lin é a linha da msg de erro
+                msg=$(echo $arq não existe)     # O tamanho da msg variará por causa de $arq
+
+                tam=${#msg}             # Tamanho da msg de erro
+                totcol=$(tput cols)     # total de colunas
+                let col=(totcol-tam)/2
+
+                tput cup $lin $col      # Posição para msg de erro
+
+                echo $msg
+                read -n1                # espera tocar qualquer tecla
+                tput cup $lin $col      # Reposiciona inicio da msg
+                tput el                 # Apaga msg
+        fi
+
+
+done
+```
 
 **Cortando sem usar cut**
 
