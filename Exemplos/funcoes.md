@@ -44,6 +44,16 @@ Funções
 Corpo do Programa
 ```
 
+**Exemplo - calcula divisões**
+```
+##Direto no shell
+function calcula
+> {
+> echo Quocient $(($1/$2))
+> echo Resto $(($1%$2))
+> }
+```
+
 **Exemplo**
 
 1 - O texto da pergunta que será feita e será posicionada 3 linhas acima do fim da tela;
