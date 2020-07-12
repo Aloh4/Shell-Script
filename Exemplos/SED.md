@@ -191,7 +191,19 @@ sed 's/REGEX/Texto/3' <- substitui na terceira ocorrencia
 
 * Caso usar a ocorrencia + a opçao global (g), será substituido a partir da ocorrencia X
 sed 's/REGEX/Texto/3g' <- substitui da terceira ocorrencia pra frente !
-	
+
+```
+# OBS:
+Também é possível gerar execuções dinâmicas
+
+printf "%s\n" aloha
+aloha
+
+printf "%s\n" aloha | sed "s/a/$(echo o)/g"
+oloho
+
+```
+
 **Exemplo de Sintaxe**
 
 ```
