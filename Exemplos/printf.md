@@ -31,6 +31,7 @@ o	Número no sistema octal
 s	Cadeia de caracteres
 x	Número no sistema hexadecimal [0-9A-Z]
 %	Imprime um %. Não existe nenhuma conversão
+-v	Joga a saída para uma variavel
 ```
 
 ## Os caracteres nesta especificação, são precedidos por `\`
@@ -145,5 +146,9 @@ printf "%20s\n" | tr ' ' -
  printf "%$(tput cols)s" ' ' | tr ' ' -
 ------------------------------------------------- .....
 
+# Opção -v
+printf -v teste "aloha"
+root@whoami:~/shell# echo $teste
+aloha
 
 ```
