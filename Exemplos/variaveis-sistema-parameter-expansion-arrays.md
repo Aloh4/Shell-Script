@@ -334,17 +334,17 @@ Pesquisar sobre LC_ALL e LC_COLLATE
 
 * Desta maneira, se o vetor já existir, seu dados serão perdidos
 * Vetor denso
-1 - `vet=(EL0 EL1 ... ELn)` se iniciado como `vetor=(), será iniciado vazio` 
+* `vet=(EL0 EL1 ... ELn)` se iniciado como `vetor=(), será iniciado vazio` 
 
 * Cria o elemento de índice `N` do vetor `vet` com valor `VAL`, se não existe, vet será criado
 * Vetor esparso
-2 - `vet[N]=VAL` , `Veiculos=([2]=jegue [5]=cavalo [9]=patinete)`
+* `vet[N]=VAL` , `Veiculos=([2]=jegue [5]=cavalo [9]=patinete)`
 
 * Criar o vetor `vet` vazio, se já existir, será mantido inalterado
-3 - `declare -a vet`
+* `declare -a vet`
 
 * Cria um vetor associativo, cujo os indices não são numéricos (versão 4.0 do Bash)
-4 - `declare -A vet`
+* `declare -A vet`
 
 **Para consultar o conteúdo do vetor, usa-se `${vet[NN]}`**
 
