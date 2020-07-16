@@ -91,6 +91,8 @@ N
 * Fazem parte dos programas intrínsecos (buildtin) do shell
 * Essas instruções, substituem comandos como `cut, expr, tr, sed, etc`
 
+https://superuser.com/questions/935374/difference-between-and-in-shell-script
+
 **Alguns Exemplos vistos**
 ```
 ${13} 	= Permite acessar um parâmetro superior a $9
