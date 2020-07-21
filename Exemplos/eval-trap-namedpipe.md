@@ -97,7 +97,7 @@ Sinal	Gerado por:
 -----
 ## O trap
 
-* Faz a monituração de um programa
+* Faz a monituração de um programa através dos sinais recebidos por ele
 
 ```
 ## Os comandos serão executados caso o programa receba o sinal S1 S2 ...
