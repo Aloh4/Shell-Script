@@ -4,7 +4,7 @@
 * Que é o local onde são gravas as diretivas que serão seguidas pelo `cron`
 * O arquivo `crontab` é editado pelo comando `crontab`
 * Os arquivos `crontab` dos usuários, são gravados em `/var/spool/cron/crontabs`
-
+* Importante !!! ` https://crontab.guru/#*_*_*_*_* `
 **Exemplo**
 ```
 0 6 * * * comando
@@ -89,6 +89,7 @@ MAILTO="admin@meuemail.com"
 
 **Referências**
 ```
+https://crontab.guru/#*_*_*_*_*
 man crontab, para saber mais sobre o comando crontab
 man 5 crontab, para saber mais sobre o formato do arquivo crontab
 man cron, para saber mais sobre o comando cro
