@@ -298,12 +298,8 @@ ls -l tubo
 ls > tubo
 lr-x------ 1 root root 64 Jul 21 17:46 /dev/fd/63 -> 'pipe:[65152]' << ## numero do processo no kernel
 
-
-cat tubo # O cat ficará esperando uma entrada
-
 cat <(ls -l) # ls -l se tornou um arquivo de leitura do cat
 ls -l <(cat) # cat tornou-se um arquivo para LS lista Validação ( é um named pipe /dev/fd/63)  
-
 
 ##Outras dicas:
 /dev/fd/0 entrada primaria
