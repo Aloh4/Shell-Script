@@ -63,6 +63,16 @@ $ > temp
 
 ```
 
+## O mesmo com eval
+```
+## Criar vários arquivos com eval !
+Errado:		> arq{1..4}
+Correto: 	eval \>arq{1..4}\; # Poderia ser sem \;
+
+teste:
+echo \>arq{1..4}\; ## O echo exibe a 'segunda' passada do eval 
+```
+
 ## Exemplos expansão de arquivos:
 ```
 cp caminho/completo/do/arquivo{,.bkp}
@@ -101,3 +111,24 @@ Escreva:
 cat -et # -e representa enter($), -t representa TAB (^I)
 ```
 
+## script parafuso
+
+```
+## Uso sleep 15&
+## Com o numero do process em background, utilizar
+## parafuso.sh PID 
+
+#!/bin/bash
+tput civis
+trap "tput cnorm; exit" 0 2 3 15
+echo -ne "\t\t"
+while kill -0 $1 2>&-
+do
+	for i in \| \/ \- \\ \| \/ \-
+	do
+		echo -en "\b$i"
+		sleep 0.2
+	done
+done
+
+```
