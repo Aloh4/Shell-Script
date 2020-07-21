@@ -126,6 +126,8 @@ ${VAR,}			Coloca a primeira letra de $VAR em minúscula
 ${VAR,,}		Coloca todas as letras de $VAR em minúscula
 ${VAR~}			Troca a caixa da primeira letra de $VAR
 ${VAR~~}		Inverte a caixa de todas as letras de $VAR
+
+${array[POS]} == Significa ARRAY !
 ```
 
 
@@ -331,6 +333,11 @@ Pesquisar sobre LC_ALL e LC_COLLATE
 
 `nomedovedor[indice]`
 `vetor[0] , vetor[1] ...etc`
+
+**OBS**
+```
+${array[POS]} == Significa ARRAY !
+```
 
 * Existem quatro formas de se declarar um vetor:
 
