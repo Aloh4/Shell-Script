@@ -10,6 +10,7 @@ $* ou  $@	Contém o conjunto de todos os parâmetros (idêntico ao $@, difere so
 		Elimina a necessidade de passar parâmetros entre aspas "param1 param2 ..."
 "$!" 		Possui o número do último processo em background
 "$?" 		Contém o retorno do último comando executado
+$$ 		é o PID do meu shell ! e por isso, não é sobescrito por outros usuários
 
 Conta os parâmetros passados:
 msg=teste
@@ -29,11 +30,24 @@ https://www.tutorialspoint.com/unix/unix-special-variables.htm
 
 ```
 
+**Exemplo de $$**
+```
+echo $$
+741
+
+>arq$$
+
+ls arq741
+arq741
+```
+
 ## Variaveis do sistema
 
 **$REPLY / ${REPLY}**
 ```
 # A variavel `$REPLY` do bash, possui a última cadeia lida de um read
+# Torna o reply maiusculo
+echo ${REPLY^}
 ```
 
 **${PIPESTATUS[@]}**
