@@ -139,13 +139,15 @@ done
 # Sintaxe:
 seq [-OPCOES] PRIMEIRO [INCREMENTO] [ULTIMO] 
 
+# Pode-se usar numeros negativos
+
 # Informando só PRIMEIRO
 $ seq 3
 1
 2
 3
 
-# Informando PRIMEIRO e ULTIMO # Pode-se usar numeros negativos
+# Informando PRIMEIRO e ULTIMO 
 $ seq 2 4
 2
 3
