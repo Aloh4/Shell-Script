@@ -126,6 +126,8 @@ ${VAR,}			Coloca a primeira letra de $VAR em minúscula
 ${VAR,,}		Coloca todas as letras de $VAR em minúscula
 ${VAR~}			Troca a caixa da primeira letra de $VAR
 ${VAR~~}		Inverte a caixa de todas as letras de $VAR
+${VAR -1}       Corta da direita para esquerda ( a partir do último )
+${VAR +1}       Corta da esquerda para direita ( a partir do primeiro )
 
 ${array[POS]} == Significa ARRAY !
 ```
