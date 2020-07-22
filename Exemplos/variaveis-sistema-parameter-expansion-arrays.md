@@ -346,7 +346,9 @@ ${array[POS]} == Significa ARRAY !
 
 * Desta maneira, se o vetor já existir, seu dados serão perdidos
 * Vetor denso
+
 * `vet=(EL0 EL1 ... ELn)` se iniciado como `vetor=(), será iniciado vazio` 
+* Exemplo: `animal=("mico leao" "Gato Pardo")`
 
 * Cria o elemento de índice `N` do vetor `vet` com valor `VAL`, se não existe, vet será criado
 * Vetor esparso
