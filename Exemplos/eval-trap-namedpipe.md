@@ -99,6 +99,15 @@ Sinal	Gerado por:
 
 * Faz a monituração de um programa através dos sinais recebidos por ele
 
+**obs**
+```
+Validar:
+Se a linha de comandos do trap estiver entre aspas, será resolvida quando o Shell a vir pela 1ª vez;
+Se a linha de comandos do trap estiver entre apóstrofos, será resolvida quando o Shell receber o sinal monitorado por ela
+Para desfazer um trap "CMDs" SIG, onde CMDs é uma linha de comandos e SIG é um sinal devemos fazer trap SIG
+Para matar o processo <PID> só devemos fazer kill -9 <PID> se ele não terminar com um simples kill <PID>
+```
+
 ```
 ## Os comandos serão executados caso o programa receba o sinal S1 S2 ...
 ## As aspas são necessárias caso o trap possua mais de um comando associado
@@ -225,6 +234,7 @@ echo "O que sobrou da linha de comandos foi '$*'"
 * O name, em named pipe, na verdade é o nome de um arquivo !
 * Os arquivos tipo named pipes, são exibidos pelo comando `ls`
 
+
 **Exemplo**
 ```
 ls -l pipe1
@@ -289,6 +299,8 @@ done
 
 * Ocorre quando se coloca um comando ou pipeline de comandos entre parenteses e `<` ou `>` a frente do parenteses a esquerda
 * Possibilidade de iniciar 2 processos assincronos e os sincronizá-los
+* O conteúdo entre parênteses será executado, dando a saída como se ele viesse de um arquivo em disco, nesse caso um named pipe temporário.
+
 
 **Exemplo**
 ```
@@ -345,6 +357,15 @@ echo "No diretorio corrente (`pwd`) existem $i arquivos"
 ```
 ls | cat -n -
 cat -n <(ls)
+```
+
+**Outro Exemplo**
+```
+cat <(seq -s ' ' 5)  
+
+ou 
+
+cat <(seq 5 | tr '\n' ' ') 
 ```
 
 
