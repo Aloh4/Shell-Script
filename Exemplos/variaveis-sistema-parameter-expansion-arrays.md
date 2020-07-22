@@ -121,7 +121,7 @@ ${VAR/PADR/CAD}	Troca em $VAR a primeira ocorrência de PADR por CAD. O padrão 
 ${VAR//PADR/CAD}	Troca em $VAR todas as ocorrências de PADR por CAD. O padrão PADR pode ser formado por metacaracteres de expansão de arquivos
 ${VAR/#PADR/CAD}	Se PADR combina com o início de $VAR, então é trocado por CAD. O padrão PADR pode ser formado por metacaracteres de expansão de arquivos
 ${VAR/%PADR/CAD}	Se PADR combina com o fim de $VAR, então é trocado por CAD. O padrão PADR pode ser formado por metacaracteres de expansão de arquivos
-${!VAR}			Lista valor da variável apontada por $VAR (indireção)
+${!VAR}			Lista valor da variável apontada por $VAR (indireção) // ùltimo parâmetro recebido
 ${VAR^}			Coloca a primeira letra de $VAR em maiúscula
 ${VAR^^}		Coloca todas as letras de $VAR em maiúscula
 ${VAR,}			Coloca a primeira letra de $VAR em minúscula
