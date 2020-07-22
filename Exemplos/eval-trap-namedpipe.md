@@ -232,13 +232,14 @@ echo "O que sobrou da linha de comandos foi '$*'"
 * Chamado de **FIFO** , acrônimo para `First in First Out`
 * Refere a propriedade em que a ordem dos bytes entrando no pipe é a mesma que a da saída
 * O name, em named pipe, na verdade é o nome de um arquivo !
+* Possibilidade de iniciar 2 processos assincronos e os sincronizá-los
 * Os arquivos tipo named pipes, são exibidos pelo comando `ls`
 
 
 **Exemplo**
 ```
 ls -l pipe1
-prw-r-r--   1   julio   dipao   0 Jan 22 23:11 pipe1|
+->>> prw-r-r--   1   julio   dipao   0 Jan 22 23:11 pipe1|
 ```
 
 ```
@@ -298,7 +299,6 @@ done
 ## Substituição de processos (process substituion)
 
 * Ocorre quando se coloca um comando ou pipeline de comandos entre parenteses e `<` ou `>` a frente do parenteses a esquerda
-* Possibilidade de iniciar 2 processos assincronos e os sincronizá-los
 * O conteúdo entre parênteses será executado, dando a saída como se ele viesse de um arquivo em disco, nesse caso um named pipe temporário.
 
 
@@ -310,24 +310,20 @@ ls -l tubo
 ls > tubo
 lr-x------ 1 root root 64 Jul 21 17:46 /dev/fd/63 -> 'pipe:[65152]' << ## numero do processo no kernel
 
-cat <(ls -l) # ls -l se tornou um arquivo de leitura do cat
-ls -l <(cat) # cat tornou-se um arquivo para LS lista Validação ( é um named pipe /dev/fd/63)  
+1º cat <(ls -l) # ls -l se tornou um arquivo de leitura do cat
+2º ls -l <(cat) # cat tornou-se um arquivo para LS lista Validação ( é um named pipe /dev/fd/63)  
+
+# 1º O comando ls -l será executado em um subshell
+# Redirecionará a saída para um named pipe temporário
+# O shell cria, nomeia e o remove
 
 ##Outras dicas:
 /dev/fd/0 entrada primaria
 /dev/fd/1 saída primaria
 /dev/fd/2erros
-
 ```
 
-```
-# O comando ls -l será executado em um subshell
-# Redirecionará a saída para um named pipe temporário
-# O shell cria, nomeia e o remove
-cat <(ls -l)
-```
-
-* Validando*
+**Validando**
 ```
 # /dev/fd/63 dispositivo logico
 
