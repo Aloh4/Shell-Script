@@ -468,6 +468,45 @@ done < /etc/passwd
 echo Total de registros lidos = $Lidos
 ```
 
+**Lista todos arquivos do diretório raíz e ao final, totaliza-os**
+
+**Exemplo com substituição de processos e redirecionamento**
+
+```
+## Exemplo professor:
+#!/bin/bash
+Lidos=
+while read lixo lixo lixo lixo Tam lixo lixo lixo Nome
+do
+    let Lidos++
+    echo -e "$Lidos\t$Tam\t$Nome"
+done < <(ls -l / | tail -n +2 | tr -s ' ')
+echo -e "\n\nForam listados $Lidos arquivos"
+
+...
+while read linha; do echo $linha; done < <(ls -l)
+
+Recebido 100 linhas
+
+----
+## Exemplo resumido:
+## $lista precisa ser incrementada fora do loop para que o subshell gerado pelo while nao a torne uma variável vazia
+
+# cat testelista.sh
+
+#!/bin/bash
+#  Lista todos arquivos do diretório raíz e ao final, totaliza-os
+
+lista=
+while read linha
+do
+        let lista++
+        echo -e "$lista"
+done < <(ls)
+echo -e "Recebido $lista linhas"
+
+```
+
 -----
 # O Comando until
 
