@@ -111,8 +111,8 @@ ${VAR:+CAD}		Se $VAR tem valor, o resultado da expressão é a cadeia CAD
 ${#VAR}			Tamanho de $VAR
 ${VAR:POS}		Extrai de $VAR a partir de POS. Origem zero
 ${VAR:POS:TAM}	Extrai de $VAR a partir de POS com tamanho igual a TAM. Origem zero
-${VAR: -1}       Corta da direita para esquerda ( a partir do último )
-${VAR: +1}       Corta da esquerda para direita ( a partir do primeiro )
+${VAR: -1}       Corta da direita para esquerda ( a partir do último ) // Pode-se usar ${VAR:(-1)}
+${VAR: +1}       Corta da esquerda para direita ( a partir do primeiro ) // Pode-se usar ${VAR:(+1)}
 ${VAR#PADR}		Corta a menor ocorrência de $VAR à esquerda da expressão que case com o padrão PADR, sendo este formado por metacaracteres de expansão de arquivos
 ${VAR##PADR}	Corta a maior ocorrência de $VAR à esquerda da expressão que case com o padrão PADR, sendo este formado por metacaracteres de expansão de arquivos
 ${VAR%PADR}		Corta a menor ocorrência de $VAR à direita da expressão que case com o padrão PADR, sendo este formado por metacaracteres de expansão de arquivos
