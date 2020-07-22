@@ -453,15 +453,17 @@ $ for fruta in "${Frutas[@]}"
 > done
 ```
 
-**Outro Exemplo**
+**Outro Exemplo - Listar os indices do VETOR**
 
 ```
 Animais=([2]="Mico Leão" [5]="Galinha d'Angola" [8]="Gato Pardo")
 
-$ echo ${!Animais[*]}
-2 5 8
 $ echo ${!Animais[@]}
 2 5 8
+ou...
+$ echo ${!Animais[*]}
+2 5 8
+
 
 $ for Ind in ${!Animais[@]}	# Ind recebe cada um dos índices
 > do
