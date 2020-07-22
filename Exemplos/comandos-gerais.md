@@ -132,3 +132,43 @@ do
 done
 
 ```
+
+**Uso SEQ**
+
+```
+# Sintaxe:
+seq [-OPCOES] PRIMEIRO [INCREMENTO] [ULTIMO] 
+
+# Informando só PRIMEIRO
+$ seq 3
+1
+2
+3
+
+# Informando PRIMEIRO e ULTIMO # Pode-se usar numeros negativos
+$ seq 2 4
+2
+3
+4
+
+# Informando PRIMEIRO, INCREMENTO e ULTIMO
+$ seq 0 3 9
+0
+3
+6
+
+# Suas opções mais usadas são a -w que preenche com zeros à esquerda listando todos com o tamanho de ULTIMO
+$ seq -w 0 20 100
+000
+020
+040
+060
+080
+100
+
+# E a opção -s [SEP] que informa o separador SEP, cujo valor padrão é o <ENTER>
+$ seq -w -s. 0 2 20?   # Usando o ponto (.) como separador
+00.02.04.06.08.10.12.14.16.18.20
+
+```
+
