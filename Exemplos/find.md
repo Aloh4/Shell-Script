@@ -53,6 +53,24 @@ w									Palavras (2 bytes)
 -mtime ±d							Procura por arquivos cujos dados foram modificados há mais (+d) de d dias ou a menos (-d) de d dias;
 ```
 
+## Particulares do -mtime
+```
+O mtime exibe o last modified n*24 hours ago
+find . -mtime 0   # find files modified between now and 1 day ago
+                  # (i.e., within the past 24 hours)
+find . -mtime -1  # find files modified less than 1 day ago
+                  # (i.e., within the past 24 hours, as before)
+find . -mtime 1   # find files modified between 24 and 48 hours ago
+find . -mtime +1  # find files modified more than 48 hours ago
+
++n More than n. MOFIDICADO A MAIS DE X DIAS (VALOR RELATIVO)
+ n Exactly n.   MODIFCADO NAS ULTIMAS X*24 HORAS (MODIFICADO A X DIAS) (Valor absoluto)
+-n Less than n. MODIFICADO A X DIAS ATRAS (NOS ULTIMOS X DIAS) (VALOR RELATIVO)
+
+Ex: find . -maxdepth 1 -type f -mtime +30 | xargs ls -l
+
+```
+
 ## Principais ações
 
 ```
