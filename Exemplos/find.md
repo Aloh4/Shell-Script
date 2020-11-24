@@ -145,6 +145,35 @@ Y			Ano com 4 dígitos
 
 ```
 
+## Particulares de FIND c/ Xargs
+
+```
+Exemplo útil para encontrar arquivos/diretórios com espaços em seu nome
+
+### find print
+É o default do print, uma newline é seguida de cada arquivo
+
+### find com -print0
+Exibe o filename na saida padrão mas com null char ao fim, não new line
+
+find / -name teste2 | xargs ls -l # Xargs pega a saída de find, e manda para o LS executar
+								  #	Xargs usa espaço ou new lines como separador (delimitador)
+								  # com a opção -0, ele entendera null chars, ao invest de whitespaces.
+								  # Por default, find usa o -print (quebra de linha significa newline
+								  # com -print0, troca o fim por null ^@ , ao inves de new line $	
+find / -name teste2 -print | cat -A
+find / -name teste2 -print0 | cat -A
+find / -name teste2 -print0 | xargs -0 ls -l
+
+
+### xargs com -0
+0 --null
+  Xargs entende sua entrada com null char, ao invez de new line
+  
+Find+xargs 				   == Separador padrão new line
+find(-print0) + xargs (-0) == Separador padrão null char
+```
+
 ** Exemplos práticos FIND: **
 
 ```
