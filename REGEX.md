@@ -229,7 +229,7 @@ dia\B   = diafragma, radial
 
 ```
 ------------------------------------------------------
-** \ ou \\ **
+** \ ou \\\ **
 
 * O escape escapa um metacaractere, tirando seu 'poder' singularmente
 * ** \\* ** é o mesmo que **[*]** = ' Asteristico literal'
