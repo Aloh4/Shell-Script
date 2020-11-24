@@ -229,16 +229,16 @@ dia\B   = diafragma, radial
 
 ```
 ------------------------------------------------------
-** | ou | **
+** \ ou \\ **
 
-* O escape escapa um metacaractere, tirando seu 'poder'
+* O escape escapa um metacaractere, tirando seu 'poder' singularmente
 * ** \\* ** é o mesmo que **[*]** = ' Asteristico literal'
 * O escape escapa o escape ** \\\\ **
 
 ```
 \.	= Torna o ponto literal
 \\	= Torna uma contrabarra literal
-\*é igual a [*] = Tornam o asterístico literal.
+\* é igual a [*] = Tornam o asterístico literal.
 \. \? \{ \^ \+	 = Torna metacaracteres em literais
 [0-9]\.[0-9]{3}\.[0-9]{3}-[0-9] = Procura um RG qualquer n.nnn.nnn-n
 
