@@ -395,26 +395,29 @@ while who | grep -q whoami; do sleep 1; echo teste; done
 **Lendo cada linha separadas por espaços**
 ```
 #!/bin/bash
+#
+#Obs: O arquivo fonte de dados deve conter espacos entre os campos, NAO TAB!
+#Nesce exemplo, nao foi necessário alterar a variável IFS pois por default, ele já entende space ?
 
 #Le linhas separadas por espaços,onde linha é:
 #A B C
 #A B C
 
-var="$IFS"
-IFS=' '
+#var="$IFS"
+#IFS=' '
 
 while read A B C
 do
 
-echo "$A
-$B
-$C
+echo "$A $B $C
+$B $A $C
+$C etc...
 " >> saidaformatada.txt
 
 done < arquivo-entrada
 
 #Poderia retornar a variável, mas está em subshell, logo não é necessario
-IFS="$var"
+#IFS="$var"
 
 ```
 
