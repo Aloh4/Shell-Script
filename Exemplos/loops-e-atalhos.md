@@ -392,6 +392,31 @@ done
 while who | grep -q whoami; do sleep 1; echo teste; done
 ```
 
+**Lendo cada linha separadas por espaços**
+```
+#!/bin/bash
+
+#Le linhas separadas por espaços,onde linha é:
+#A B C
+#A B C
+
+var="$IFS"
+IFS=' '
+
+while read A B C
+do
+
+echo "$A
+$B
+$C
+" >> saidaformatada.txt
+
+done < arquivo-entrada
+
+#Poderia retornar a variável, mas está em subshell, logo não é necessario
+IFS="$var"
+
+```
 
 **Monitorar processos em Background**
 ```
