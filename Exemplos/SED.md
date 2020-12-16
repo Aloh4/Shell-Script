@@ -1,3 +1,11 @@
+# Dicas úteis:
+https://catonmat.net/sed-one-liners-explained-part-one
+https://catonmat.net/sed-one-liners-explained-part-two
+https://catonmat.net/sed-one-liners-explained-part-three
+https://stackoverflow.com/questions/5316572/how-to-print-5-consecutive-lines-after-a-pattern-in-file-using-awk
+
+
+
 # SED
 
 *As opções abaixo podem ser usadas de maneira mista, utilizando ponto e vírgula*
@@ -17,6 +25,12 @@ p   # imprim e / d - deleta / !p/!d nao imprime/nao deleta
 ---------
 # Printando linhas (p)
 
+```
+Printa X linhas após o MATCH da Regex
+
+sed -n -r  "/REGEX/,+7p" arq1 
+
+```
 **Obs:**
 
 ```
