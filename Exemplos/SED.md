@@ -1,9 +1,10 @@
 # Dicas úteis:
+```
 https://catonmat.net/sed-one-liners-explained-part-one
 https://catonmat.net/sed-one-liners-explained-part-two
 https://catonmat.net/sed-one-liners-explained-part-three
 https://stackoverflow.com/questions/5316572/how-to-print-5-consecutive-lines-after-a-pattern-in-file-using-awk
-
+```
 
 
 # SED
