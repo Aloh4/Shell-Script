@@ -4,6 +4,8 @@
 
 ```
 Variável	Significado
+$1..$9		Parâmetros a serem utilizados por um shell script
+
 $0		Contém o nome do programa  
 $#		Contém a quantidade de parâmetros passados  
 $* ou  $@	Contém o conjunto de todos os parâmetros (idêntico ao $@, difere somente em parâmetro(s) com espaço em branco) 
