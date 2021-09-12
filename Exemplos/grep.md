@@ -64,6 +64,11 @@ grep -E '^3\b' <<< $(grep -n '.*' /etc/passwd)
 # ls -l | grep ^d| grep -o '[^ ]*$' <- apenas os nomes dos subdiretorios do diretório corrente
 ```
 
+##Grep com Before-After matched lines
+```
+grep -B 5 -A 5 (before and after)
+```
+
 ##Apenas nomes de users com GUID:UID iguais
 ```
 root@whoami:~# grep -Eo '^[A-Za-z]+' <<< $(grep -Eo '^[A-Za-z]+:x:([0-9]+):\1' /etc/passwd)
